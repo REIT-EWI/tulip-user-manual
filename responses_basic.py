@@ -1,7 +1,8 @@
-
 from openai import OpenAI
-client = OpenAI(base_url="http://demo.131.180.79.250.nip.io/v1", api_key="DUMMY_KEY")
-model = "gpt-oss-20b"  
+from common import BASE_URL, API_KEY, MODEL
+
+client = OpenAI(base_url=BASE_URL, api_key=API_KEY)
+model = MODEL
 
 response = client.responses.create(
     model=model,

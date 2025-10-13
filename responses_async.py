@@ -1,11 +1,9 @@
-
-
-import os
 import asyncio
 from openai import AsyncOpenAI
+from common import BASE_URL, API_KEY, MODEL
 
-client = AsyncOpenAI(base_url="http://demo.131.180.79.250.nip.io/v1", api_key="DUMMY_KEY")
-model = "gpt-oss-20b"  
+client = AsyncOpenAI(base_url=BASE_URL, api_key=API_KEY)
+model = MODEL
 
 async def main() -> None:
     response = await client.responses.create(
