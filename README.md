@@ -6,7 +6,7 @@ Minimal smoke tests for the OpenAI-compatible API exposed by NVIDIA Dynamo + vLL
 
 ```bash
 cd apps/quick-tests
-cp .env.example .env   # edit the base URL, key and model if needed
+cat .env   # edit the base URL, key and model if needed
 ```
 
 ## Run tests
