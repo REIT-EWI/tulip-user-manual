@@ -1,8 +1,9 @@
 #!/bin/bash
 
-BASE_URL="${OPENAI_BASE_URL:-http://demo.131.180.79.250.nip.io}"
+BASE_URL="${OPENAI_BASE_URL:-http://api.131.180.79.250.nip.io}"
 API_KEY="${OPENAI_API_KEY:-DUMMY_KEY}"
 MODEL="${OPENAI_MODEL:-gpt-oss-20b}"
+MODEL="${OPENAI_MODEL:-mistralai/Mistral-7B-Instruct-v0.3}"
 
 echo "Using base URL: $BASE_URL"
 echo "Using model: $MODEL"
@@ -21,3 +22,12 @@ curl ${BASE_URL}/v1/responses \
     "input": "Tell me a three sentence bedtime story about a unicorn."
   }' | jq .
 
+
+echo -e "\n***************************Creating a model response.***************************"
+curl ${BASE_URL}/v1/responses \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${API_KEY}" \
+  -d '{
+    "model": "'"${MODEL}"'",
+    "input": "another request. this time tell a long story."
+  }' | jq .
