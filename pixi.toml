@@ -11,7 +11,8 @@ chat = "python chat_completions.py"
 resp = "python responses_basic.py"
 async = "python responses_async.py"
 stream = "python responses_stream.py"
-curl = "bash curl_smoke.sh"
+curl_responses = "bash curl_responses.sh"
+curl_chat = "bash curl_chat.sh"
 
 [pypi-dependencies]
 asyncio = ">=4.0.0, <5"
