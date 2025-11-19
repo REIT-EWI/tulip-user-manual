@@ -14,7 +14,7 @@ echo -e "\n***************************Listing models.***************************
 curl "${BASE_URL}/v1/models" \
   -H "Authorization: Bearer ${API_KEY}"
 
-echo -e "\n"
+echo -e "\n\nUsing model: $MODEL\n"
 
 echo -e "\n***************************Creating a model response.***************************"
 curl ${BASE_URL}/v1/chat/completions \
@@ -28,4 +28,4 @@ curl ${BASE_URL}/v1/chat/completions \
       { "role": "system", "content": "You are a helpful coding assistant for TU Delft." },
       { "role": "user", "content": "Write a tiny Python function that prints the TU Delft logo in ASCII." }
     ]
-  }' | jq .
+  }' 
