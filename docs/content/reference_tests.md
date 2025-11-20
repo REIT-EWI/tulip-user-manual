@@ -23,11 +23,9 @@ This page points to small, self-contained tests for **TULIP**. It is meant for *
 
 Where:
 
-   - `BASE_URL`: defaults to the production endpoint (https://api.tulip.tudelft.nl). 
-   - `MODEL`: a model available on the backend (e.g. `Qwen/Qwen2.5-Coder-14B-Instruct`). You can check available models by checking `https://api.tulip.tudelft.nl/v1/models`.
-   - `API_KEY`: unused for now but kept for forward compatibility
-
-
+- `BASE_URL`: defaults to the production endpoint (https://api.tulip.tudelft.nl). 
+- `MODEL`: a model available on the backend (e.g. `Qwen/Qwen2.5-Coder-14B-Instruct`). You can check available models by checking `https://api.tulip.tudelft.nl/v1/models`.
+- `API_KEY`: unused for now but kept for forward compatibility
 
 ## Running tests
 
