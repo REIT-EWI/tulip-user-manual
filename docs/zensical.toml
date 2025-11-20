@@ -25,12 +25,11 @@ features = [
     "content.action.view",
 ]
 font.code = "JetBrains Mono"
-logo = "assets/tulip-logo.png"
-favicon = "images/favicon.png"
+# logo = "assets/tulip-logo.png"
+# favicon = "images/favicon.png"
 
 [project.theme.icon]
-#logo = "fontawesome/solid/cat"
-#favicon = "fontawesome/brands/gitlab" 
+favicon = "fontawesome/regular/flower-tulip"
 repo = "fontawesome/brands/gitlab"
 
 [[project.theme.palette]] 
