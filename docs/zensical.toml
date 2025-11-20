@@ -29,7 +29,9 @@ font.code = "JetBrains Mono"
 # favicon = "images/favicon.png"
 
 [project.theme.icon]
-favicon = "fontawesome/regular/flower-tulip"
+#favicon = "fontawesome/regular/flower-tulip"
+#favicon = "mdi:flower-tulip-outline"
+#favicon = "lucide:flower-2"
 repo = "fontawesome/brands/gitlab"
 
 [[project.theme.palette]] 
