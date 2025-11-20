@@ -23,4 +23,4 @@ curl ${BASE_URL}/v1/responses \
   -d '{
     "model": "'"${MODEL}"'",
     "input": "Tell me a three sentence bedtime story about a unicorn."
-  }' 
+  }' | jq .

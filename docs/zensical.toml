@@ -7,7 +7,7 @@ site_dir = "public/"
 site_url = "https://docs.tulip.tudelft.nl/"
 docs_dir = "content/"
 repo_url = "https://gitlab.ewi.tudelft.nl/tulip/reference-tests"
-edit_uri = "https://gitlab.ewi.tudelft.nl/tulip/reference-tests"
+edit_uri = "https://gitlab.ewi.tudelft.nl/tulip/reference-tests/-/tree/main/docs/content/"
 
 extra_css = ["assets/extra.css"]
 
@@ -25,10 +25,13 @@ features = [
     "content.action.view",
 ]
 font.code = "JetBrains Mono"
+logo = "assets/tulip-logo.png"
+favicon = "images/favicon.png"
 
 [project.theme.icon]
-logo = "fontawesome/solid/cat"
-repo = "fontawesome/brands/github"
+#logo = "fontawesome/solid/cat"
+#favicon = "fontawesome/brands/gitlab" 
+repo = "fontawesome/brands/gitlab"
 
 [[project.theme.palette]] 
 scheme = "default"

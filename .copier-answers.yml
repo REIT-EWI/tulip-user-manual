@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier
+_commit: v1.1
+_src_path: gh:virtlink/zensical-docs-template
+author: Azza Ahmed
+description: Guides, tutorials, and reference information.
+edit_uri: https://gitlab.ewi.tudelft.nl/tulip/reference-tests/docs
+name: TULIP Docs
+repo_url: https://gitlab.ewi.tudelft.nl/tulip/reference-tests
+site_url: https://docs.tulip.tudelft.nl/
+vcs_platform: Other

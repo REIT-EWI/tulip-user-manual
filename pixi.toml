@@ -7,12 +7,12 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-chat = "python chat_completions.py"
-resp = "python responses_basic.py"
-async = "python responses_async.py"
-stream = "python responses_stream.py"
-curl_responses = "bash curl_responses.sh"
-curl_chat = "bash curl_chat.sh"
+chat = "python basic-tests/chat_completions.py"
+resp = "python basic-tests/responses_basic.py"
+async = "python basic-tests/responses_async.py"
+stream = "python basic-tests/responses_stream.py"
+curl_responses = "bash basic-tests/curl_responses.sh"
+curl_chat = "bash basic-tests/curl_chat.sh"
 
 [pypi-dependencies]
 asyncio = ">=4.0.0, <5"
@@ -22,3 +22,4 @@ dotenv = ">=0.9.9, <0.10"
 [dependencies]
 python = ">=3.14.0,<3.15"
 copier = ">=9.10.3,<10"
+jq = ">=1.8.1,<2"

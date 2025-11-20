@@ -28,4 +28,4 @@ curl ${BASE_URL}/v1/chat/completions \
       { "role": "system", "content": "You are a helpful coding assistant for TU Delft." },
       { "role": "user", "content": "Write a tiny Python function that prints the TU Delft logo in ASCII." }
     ]
-  }' 
+  }' | jq .

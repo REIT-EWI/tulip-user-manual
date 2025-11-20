@@ -88,11 +88,6 @@ print(response.output)  # output can contain tool calls, data about reasoning to
 - Model choice and configuration may change as the platform evolves. Always check the `/v1/models` endpoint for the latest list of available models.
 - _Feedback is welcome and helps guide the next iteration of the platform._ 
 
-## Reference Tests
-
-If you prefer to run minimal working examples to verify TULIP integration, please see the [reference tests repository](https://gitlab.ewi.tudelft.nl/tulip/tulip-reference-tests).
-
-These scripts test `/v1/responses`, `/v1/chat/completions`, and simple streaming.
 
 ## Contact / Feedback
 
