@@ -1,4 +1,4 @@
-# Reference Tests for the LLM API
+# Reference Tests
 
 This page points to small, self-contained tests for **TULIP**. It is meant for **early testers** to:
 
