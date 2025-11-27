@@ -11,6 +11,13 @@ edit_uri = "https://gitlab.ewi.tudelft.nl/tulip/reference-tests/-/tree/main/docs
 
 extra_css = ["assets/extra.css"]
 
+nav = [
+  {"Home" = "index.md"},
+  {"Getting Started" = "getting_started.md"},
+  {"Changelog" = "changelog.md"},
+  {"Roadmap" = "roadmap.md"},
+]
+
 
 [project.theme]
 language = "en"
@@ -27,6 +34,7 @@ features = [
 font.code = "JetBrains Mono"
 # logo = "assets/tulip-logo.png"
 # favicon = "images/favicon.png"
+
 
 [project.theme.icon]
 #favicon = "fontawesome/regular/flower-tulip"
