@@ -64,7 +64,6 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 
 ### Frontend Layer (User Experience)
 
-- [x] Completed / In progress
 - [x] Swagger UI auto-enabled (/docs)
 - [x] Basic curl + Python examples
 - [ ] Single-page web UI for chat (FastChat-like)
