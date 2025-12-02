@@ -1,4 +1,4 @@
-## v0.1.0-alpha: Pilot Launch
+## v0.1.0-alpha: Pilot Launch (2025-11-27)
 
 ### Added
 
