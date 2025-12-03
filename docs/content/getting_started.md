@@ -69,21 +69,17 @@ And, for a minimal example via `/v1/responses` endpoint:
 ```python
 from openai import OpenAI
 
-client = OpenAI(base_url="https://api.tulip.tudelft.nl/v1", api_key="not-required-yet")
+client = OpenAI(base_url=TULIP_API_URL, api_key=TULIP_API_KEY)
 
 response = client.responses.create(
-    model="mistralai/Ministral-8B-Instruct-2410",
-    input="Write a one-sentence bedtime story about a unicorn."
+    model="openai/gpt-oss-20b",
+    input="Write a short friendly greeting.",
+    max_output_tokens=640
 )
+print(response.output_text) # Prints the generated text
 ```
 
-To get the generated text output:
-
-```python
-print(response.output_text)
-```
-
-Or, to see the full structured response:
+> To see the full structured response:
 
 ```python
 print(response.output)  # May contain tool calls structures, reasoning traces, and/or other items

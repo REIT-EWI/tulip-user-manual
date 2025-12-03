@@ -2,9 +2,9 @@
 
 #export SERVER_IP=131.180.79.250
 
-BASE_URL="${OPENAI_BASE_URL:-http://demo.131.180.79.250.nip.io}"
-API_KEY="${OPENAI_API_KEY:-DUMMY_KEY}"
-MODEL="${OPENAI_MODEL:-gpt-oss-20b}"
+BASE_URL="${TULIP_BASE_URL:-http://demo.131.180.79.250.nip.io}"
+API_KEY="${TULIP_API_KEY:-DUMMY_KEY}"
+MODEL="${TULIP_MODEL:-gpt-oss-20b}"
 MAX_OUTPUT=8                         # keep tiny so output tokens don't dominate
 
 echo "Using base URL: $BASE_URL"
