@@ -1,9 +1,9 @@
 
-## Roadmap
+## 1 Roadmap
 
 _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.anl.gov/services/inference-endpoints/) design_
 
-### Core Functionality
+### 1.1 Core Functionality
 
 - [x] OpenAI-compatible API (`/v1/chat/completions`, `/v1/completions`, `/v1/responses`)
 - [x] Multi-model serving with NVIDIA Dynamo + vLLM
@@ -14,14 +14,14 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [x] Initial reference tests for smoketesting
 - [x] Basic documentation and examples
 
-### Authentication & Access Control
+### 1.2 Authentication & Access Control
 
 - [ ] Token-based authentication (simple API keys)
 - [ ] TU Delft SSO / OIDC integration
 - [ ] Token scopes: rate-limit tiers
 - [ ] Automatic issuance of tokens through GitLab
 
-### Accounting, Logging, Usage Tracking
+### 1.3 Accounting, Logging, Usage Tracking
 
 - [x] Basic Prometheus metrics (requests, latency, queue size)
 - [ ] Per-user request accounting
@@ -29,7 +29,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [ ] Optional logging of prompts (opt-in for research, disabled by default)
 - [ ] Export usage summaries (daily/weekly) to a TU Delft dashboard
 
-### Quotas, Limits & Scheduling
+### 1.4 Quotas, Limits & Scheduling
 
 - [x] Fair scheduling (vLLM queue)
 - [x] Max context length harmonised across models
@@ -38,7 +38,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [ ] Quota enforcement at gateway
 - [ ] Mechanism for _"priority users"_ (courses, faculty, grants)
 
-### Observability & Reliability
+### 1.5 Observability & Reliability
 
 - [x] Prometheus + Grafana dashboards
 - [x] DCGM GPU monitoring
@@ -53,7 +53,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [ ] Log aggregation
 - [ ] Automated smoke tests on deployment (GitOps pre-deployment checks)
 
-### Multi-Tenancy & Stability
+### 1.6 Multi-Tenancy & Stability
 
 - [x] Single-node multi-model serving (1 GPU per model)
 - [ ] Dedicated namespaces per course/project
@@ -62,7 +62,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [ ] Model versioning and rollback support
 - [ ] Blue/green deployments for zero-downtime updates
 
-### Frontend Layer (User Experience)
+### 1.7 Frontend Layer (User Experience)
 
 - [x] Swagger UI auto-enabled (/docs)
 - [x] Basic curl + Python examples
@@ -71,7 +71,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
       - [ ] Data processing workflows
       - [ ] Code generation/ assistance
 
-### Model portfolio & Management
+### 1.8 Model portfolio & Management
 
 - [x] General assistant: Ministral 8B
 - [x] Coding assistant: Qwen2.5 Coder 14B
@@ -86,7 +86,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [ ] Small fast model for high-throughput batches
 - [ ] Tool-calling enabled model
 
-### Storage, CI/CD, & Infra
+### 1.9 Storage, CI/CD, & Infra
 - [x] GitOps via FluxCD
 - [x] Local path storage for model cache
 - [x] Separate staging vs production clusters
@@ -97,7 +97,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [ ] Autoscaling via KEDA
 - [ ] Support for multi-GPU nodes (future cluster expansion)
 
-### Governance, Policy, & Documentation
+### 1.10 Governance, Policy, & Documentation
 
 - [x] Basic user documentation (Getting Started)
 - [x] Reference tests and examples
