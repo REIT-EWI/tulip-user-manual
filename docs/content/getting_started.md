@@ -85,6 +85,21 @@ print(response.output_text) # Prints the generated text
 print(response.output)  # May contain tool calls structures, reasoning traces, and/or other items
 ```
 
+## Tool Calling Support
+
+Reasoning and tool calling is supported in the OpenAI Chat Completion endpoint.
+
+Currently verified:
+
+| Model   | Tool calling           | Notes                                               |
+| ------- | ---------------------- | --------------------------------------------------- |
+| GPT-OSS | Supported            | Verified end-to-end (function emission + tool loop) |
+
+Minimal working example:
+
+
+
+
 ## Limits (Pilot Phase)
 
 - Some OpenAI features (e.g. images, audio, realtime) are not available.
