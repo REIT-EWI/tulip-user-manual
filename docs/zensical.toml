@@ -16,6 +16,8 @@ nav = [
   {"Getting Started" = "getting_started.md"},
   {"Changelog" = "changelog.md"},
   {"Roadmap" = "roadmap.md"},
+  {"Reference Tests" = "reference_tests.md"},
+  {"Data handling" = "data_handling.md"}
 ]
 
 
