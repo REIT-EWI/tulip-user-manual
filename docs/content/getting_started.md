@@ -6,7 +6,7 @@ TULIP currently exposes two API base URLs:
 
 - **LLM inference:** https://api.tulip.tudelft.nl
 - **Embedding models:** https://embedding.tulip.tudelft.nl
-```
+
 
 Supported OpenAI-style endpoints:
 
