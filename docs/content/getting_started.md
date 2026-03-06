@@ -2,10 +2,10 @@
 
 ## API Endpoint
 
-The TULIP API endpoint is available at:
+TULIP currently exposes two API base URLs:
 
-```bash
-https://api.tulip.tudelft.nl
+- **LLM inference:** https://api.tulip.tudelft.nl
+- **Embedding models:** https://embedding.tulip.tudelft.nl
 ```
 
 Supported OpenAI-style endpoints:
@@ -16,7 +16,7 @@ Supported OpenAI-style endpoints:
 | `/v1/completions`      | Text completion (prompt → text)    | ✓ enabled                                                                                |
 | `/v1/responses`        | Unified endpoint (recommended)     | ✓ enabled                                                                                |
 | `/v1/models`           | List of available models           | ✓ enabled                                                                                |
-| `/v1/embeddings`       | Embeddings                         | **Supported by backend but no embedding model deployed yet → returns `Model not found`** |
+| `/v1/embeddings`       | Embeddings                         | ✓ (available at `https://embedding.tulip.tudelft.nl`)                     |
 
 
 > **Authentication:** disabled during pilot. A dummy API key may be passed but is ignored.
@@ -25,17 +25,18 @@ Supported OpenAI-style endpoints:
 
 Currently deployed models include:
 
-- `mistralai/Ministral-8B-Instruct-2410`: general-purpose assistant
-- `Qwen/Qwen2.5-Coder-14B-Instruct`: coding-focused assistant
+<!-- - `mistralai/Ministral-8B-Instruct-2410`: general-purpose assistant
+- `Qwen/Qwen2.5-Coder-14B-Instruct`: coding-focused assistant -->
 - `openai/gpt-oss-20b`: open-weights GPT-style model
 
 The exact list may evolve overtime. You can query the currently active models at:
 
 ```bash
-curl https://api.tulip.tudelft.nl/v1/models
+curl https://api.tulip.tudelft.nl/v1/models 
+curl https://embedding.tulip.tudelft.nl/v1/models # For embedding models
 ```
 
-Or, by simply visiting: [https://api.tulip.tudelft.nl/v1/models](https://api.tulip.tudelft.nl/v1/models)
+Or, by simply visiting these websites above.
 
 ## How to send requests
 
@@ -48,7 +49,7 @@ curl https://api.tulip.tudelft.nl/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H 'Authorization: Bearer DUMMY_API_KEY' \
   -d '{
-        "model": "mistralai/Ministral-8B-Instruct-2410",
+        "model": "openai/gpt-oss-20b",
         "messages": [
           {"role": "user", "content": "Say hello from TULIP."}
         ],
@@ -97,14 +98,39 @@ Currently verified:
 
 Minimal working example:
 
+## Embedding models
 
+TULIP also provides embedding models for retrieval and semantic search workloads.
+
+Embedding models are exposed through a separate API base URL:
+
+- Embeddings API base URL: https://embedding.tulip.tudelft.nl
+- Endpoint: `/v1/embeddings`
+
+You can use the embeddings endpoint to convert text into vector representations for downstream tasks such as search, clustering, and retrieval-augmented generation (RAG).
+
+| Model                     | Notes                           |
+| ------------------------- | ------------------------------- |
+| `Qwen/Qwen3-Embedding-8B` | 4096-dimensional embeddings |
+
+
+Example request:
+
+```bash
+curl -sS https://embedding.tulip.tudelft.nl/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "input": ["hello from tulip", "second string"],
+    "encoding_format": "float"
+  }'
+```  
 
 
 ## Limits (Pilot Phase)
 
 - Some OpenAI features (e.g. images, audio, realtime) are not available.
 - Streaming support varies per model.
-- No embedding model is deployed (calls to `/v1/embeddings` will fail).
 - Model choice and configuration may change as the platform evolves. Always check the `/v1/models` endpoint for the latest list of available models.
 - The service is under active development: _expect occasional interruptions_. 
 

@@ -1,3 +1,22 @@
+## v0.1.1-alpha: Embedding Support (2026-03-06)
+
+Added
+
+- OpenAI-compatible embeddings endpoint
+- Dedicated embedding API base URL: https://embedding.tulip.tudelft.nl
+- Initial embedding model: `Qwen/Qwen3-Embedding-8B` (4096-dim)
+
+Documentation
+
+- Updated Getting Started with embedding usage example
+- Clarified separate base URLs for inference and embeddings
+
+Notes
+
+- Authentication remains disabled during the pilot phase
+- Model availability may evolve as the platform matures
+
+
 ## v0.1.0-alpha: Pilot Launch (2025-11-27)
 
 ### Added
