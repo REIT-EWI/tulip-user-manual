@@ -1,3 +1,32 @@
+## v0.2.0-alpha: API consolidation (2026-03-12)
+
+Added
+-----
+- Capability-based API namespaces (`/chat/v1`, `/code/v1`, `/embed/v1`)
+
+API changes
+-----------
+- Removed embedding endpoint `https://embedding.tulip.tudelft.nl`
+- Embeddings now available at `/embed/v1` under the main API domain
+- All models are now served under the unified domain `https://api.tulip.tudelft.nl`
+
+Improvements
+------------
+- Separated DynamoGraphDeployments per model backend
+- Resolved tool-calling instability caused by mixed model graphs
+- Verified reliable tool-calling for both:
+  - `openai/gpt-oss-20b`
+  - `Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8`
+
+Migration
+---------
+Old endpoint:
+https://embedding.tulip.tudelft.nl/v1/embeddings
+
+New endpoint:
+https://api.tulip.tudelft.nl/embed/v1/embeddings
+
+
 ## v0.1.1-alpha: Embedding Support (2026-03-06)
 
 Added

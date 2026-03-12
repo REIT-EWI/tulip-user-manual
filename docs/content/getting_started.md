@@ -2,41 +2,62 @@
 
 ## API Endpoint
 
-TULIP currently exposes two API base URLs:
+TULIP exposes a single API domain:
 
-- **LLM inference:** https://api.tulip.tudelft.nl
-- **Embedding models:** https://embedding.tulip.tudelft.nl
+- **Base URL:** https://api.tulip.tudelft.nl
 
 
-Supported OpenAI-style endpoints:
+!!! info "Update"
 
-| Endpoint               | Purpose                            | Status                                                                                   |
-| ---------------------- | ---------------------------------- | ---------------------------------------------------------------------------------------- |
-| `/v1/chat/completions` | Chat-style interactions (messages) | ✓ enabled                                                                                |
-| `/v1/completions`      | Text completion (prompt → text)    | ✓ enabled                                                                                |
-| `/v1/responses`        | Unified endpoint (recommended)     | ✓ enabled                                                                                |
-| `/v1/models`           | List of available models           | ✓ enabled                                                                                |
-| `/v1/embeddings`       | Embeddings                         | ✓ (available at `https://embedding.tulip.tudelft.nl`)                     |
+    The previous endpoint `https://embedding.tulip.tudelft.nl` has been phased out. 
+    Embedding models are now available under the unified API domain:`https://api.tulip.tudelft.nl/embed/v1`.
+
+
+All models are now served under the same domain and grouped by capability:
+
+| Capability              | Base Path        |
+| ----------------------- | ---------------- |
+| Chat / reasoning models | `/chat/v1`       |
+| Coding models           | `/code/v1`       |
+| Embedding models        | `/embed/v1` |
+
+Each capability exposes its own OpenAI-compatible API namespace, so:
+
+| Endpoint                    | Purpose               | Example                                                 |
+| --------------------------- | --------------------- | ------------------------------------------------------- |
+| `/chat/v1/chat/completions` | Chat-style interactions (messages)     | `https://api.tulip.tudelft.nl/chat/v1/chat/completions` |
+| `/chat/v1/completions`      | Text completion (prompt → text)       | `https://api.tulip.tudelft.nl/chat/v1/completions`      |
+| `/chat/v1/responses`        | Unified endpoint (recommended)      | `https://api.tulip.tudelft.nl/chat/v1/responses`        |
+| `/chat/v1/models`           | List chat models      | `https://api.tulip.tudelft.nl/chat/v1/models`           |
+| `/code/v1/models`           | List coding models    | `https://api.tulip.tudelft.nl/code/v1/models`           |
+| `/embed/v1/models`     | List embedding models | `https://api.tulip.tudelft.nl/embed/v1/models`     |
+| `/embed/v1/embeddings` | Generate embeddings   | `https://api.tulip.tudelft.nl/embed/v1/embeddings` |
+
 
 
 > **Authentication:** disabled during pilot. A dummy API key may be passed but is ignored.
 
 ## Available Models
 
-Currently deployed models include:
+Currently deployed models are organized by capability.
 
-<!-- - `mistralai/Ministral-8B-Instruct-2410`: general-purpose assistant
-- `Qwen/Qwen2.5-Coder-14B-Instruct`: coding-focused assistant -->
-- `openai/gpt-oss-20b`: open-weights GPT-style model
+| Capability | Models |
+| ---------- | -------|
+| Chat       | `openai/gpt-oss-20b` |
+| Coding     | `Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8` |
+| Embedding  | `Qwen/Qwen3-Embedding-8B` |
 
-The exact list may evolve overtime. You can query the currently active models at:
+
+
+The exact list may evolve over time. You can query the currently active models at:
 
 ```bash
-curl https://api.tulip.tudelft.nl/v1/models 
-curl https://embedding.tulip.tudelft.nl/v1/models # For embedding models
+curl https://api.tulip.tudelft.nl/chat/v1/models
+curl https://api.tulip.tudelft.nl/code/v1/models
+curl https://api.tulip.tudelft.nl/embed/v1/models
 ```
 
-Or, by simply visiting these websites above.
+You can also open these URLs directly in a browser.
 
 ## How to send requests
 
@@ -45,7 +66,7 @@ Or, by simply visiting these websites above.
 Now, you can send a simple chat completion request like this:
 
 ```bash
-curl https://api.tulip.tudelft.nl/v1/chat/completions \
+curl -s https://api.tulip.tudelft.nl/chat/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H 'Authorization: Bearer DUMMY_API_KEY' \
   -d '{
@@ -70,12 +91,13 @@ And, for a minimal example via `/v1/responses` endpoint:
 ```python
 from openai import OpenAI
 
-client = OpenAI(base_url=TULIP_API_URL, api_key=TULIP_API_KEY)
+client = OpenAI(base_url = "https://api.tulip.tudelft.nl/chat/v1", 
+                api_key = "DUMMY_API_KEY")
 
 response = client.responses.create(
-    model="openai/gpt-oss-20b",
-    input="Write a short friendly greeting.",
-    max_output_tokens=640
+    model = "openai/gpt-oss-20b",
+    input = "Write a short friendly greeting.",
+    max_output_tokens = 640
 )
 print(response.output_text) # Prints the generated text
 ```
@@ -92,22 +114,23 @@ Reasoning and tool calling is supported in the OpenAI Chat Completion endpoint.
 
 Currently verified:
 
-| Model   | Tool calling           | Notes                                               |
-| ------- | ---------------------- | --------------------------------------------------- |
-| GPT-OSS | Supported            | Verified end-to-end (function emission + tool loop) |
+| Model                                   | Tool calling | Notes               |
+| --------------------------------------- | ------------ | ------------------- |
+| `openai/gpt-oss-20b`                    | Supported    | Verified end-to-end |
+| `Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8` | Supported    | Verified end-to-end |
 
-Minimal working example:
+Tool calling has been validated for both models using repeated end-to-end tests (tool emission → execution → model continuation)
+
 
 ## Embedding models
 
 TULIP also provides embedding models for retrieval and semantic search workloads.
 
-Embedding models are exposed through a separate API base URL:
-
-- Embeddings API base URL: https://embedding.tulip.tudelft.nl
-- Endpoint: `/v1/embeddings`
+Embeddings are available via: `https://api.tulip.tudelft.nl/embed/v1/embeddings`
 
 You can use the embeddings endpoint to convert text into vector representations for downstream tasks such as search, clustering, and retrieval-augmented generation (RAG).
+
+Supported models:
 
 | Model                     | Notes                           |
 | ------------------------- | ------------------------------- |
@@ -117,7 +140,7 @@ You can use the embeddings endpoint to convert text into vector representations 
 Example request:
 
 ```bash
-curl -sS https://embedding.tulip.tudelft.nl/v1/embeddings \
+curl -s https://api.tulip.tudelft.nl/embed/v1/embeddings \
   -H "Content-Type: application/json" \
   -d '{
     "model": "Qwen/Qwen3-Embedding-8B",
@@ -130,8 +153,7 @@ curl -sS https://embedding.tulip.tudelft.nl/v1/embeddings \
 ## Limits (Pilot Phase)
 
 - Some OpenAI features (e.g. images, audio, realtime) are not available.
-- Streaming support varies per model.
-- Model choice and configuration may change as the platform evolves. Always check the `/v1/models` endpoint for the latest list of available models.
+- Model choice and configuration may change as the platform evolves. Always check the relevant `/models` endpoint (e.g. `/chat/v1/models`, `/code/v1/models`, `/embed/v1/models`)
 - The service is under active development: _expect occasional interruptions_. 
 
 ## Contact / Feedback
@@ -142,7 +164,7 @@ Please report:
 - reliability issues or latency spikes,
 - suggestions for new models or capabilities.
 
-Early tester feedback directly shapes the next iteration of TULIP. Please issue tickets on this repository or contact the TULIP team directly for feedback or questions.
+Early tester feedback directly shapes the next iteration of TULIP. __Please issue tickets on this repository or contact the TULIP team directly for feedback or questions.__
 
 <!-- ## System Design (high-level)
 
