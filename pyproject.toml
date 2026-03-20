@@ -2,7 +2,8 @@
 name = "docs"
 version = "1.0.0"
 description = "Guides, tutorials, and reference information."
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
+    "zensical-code-references>=0.1.0",
     "zensical>=0.0.8",
 ]
