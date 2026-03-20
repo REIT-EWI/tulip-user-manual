@@ -1,31 +1,55 @@
+## v0.3.0-alpha Usability & Access (2026-03-20)
+
+### API & Access
+
+- Introduced model aliases (e.g. `chat`, `code`, `embed`) as the primary user interface  
+  → Raw model names are no longer user-facing
+- Basic API key authentication enforced at ingress level
+
+### Documentation & Examples
+
+- Complete documentation restructure with:
+    - Clear Getting Started flow
+    - Capability-based API reference
+    - Explicit model mapping
+- Removed outdated or unverified content
+- Added validated, copy-paste examples for core capabilities:
+    - Chat, Responses API, Embeddings, Tool calling
+
+### Known limitations
+
+- Tool calling via `/v1/responses` currently not reliable in this environment due to backend serving limitations
+- Authentication is API-key based only (no SRAM/OIDC yet)
+- No rate limiting or quota enforcement
+- Service remains in pilot phase (no uptime guarantees)
+
 ## v0.2.0-alpha: API consolidation (2026-03-12)
 
-Added
------
+### Added
+
 - Capability-based API namespaces (`/chat/v1`, `/code/v1`, `/embed/v1`)
 
-API changes
------------
+### API changes
+
 - Removed embedding endpoint `https://embedding.tulip.tudelft.nl`
 - Embeddings now available at `/embed/v1` under the main API domain
 - All models are now served under the unified domain `https://api.tulip.tudelft.nl`
 
-Improvements
-------------
+### Improvements
+
 - Separated DynamoGraphDeployments per model backend
 - Resolved tool-calling instability caused by mixed model graphs
 - Verified reliable tool-calling for both:
   - `openai/gpt-oss-20b`
   - `Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8`
 
-Migration
----------
+### Migration
+
 Old endpoint:
 https://embedding.tulip.tudelft.nl/v1/embeddings
 
 New endpoint:
 https://api.tulip.tudelft.nl/embed/v1/embeddings
-
 
 ## v0.1.1-alpha: Embedding Support (2026-03-06)
 
