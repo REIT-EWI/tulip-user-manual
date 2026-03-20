@@ -13,6 +13,7 @@ TUDELFT_TULIP_CAPABILITY=chat
 
 !!! info "What these examples assume"
     - Python examples load these values from `examples/common.py`.
+    - Python run commands use `pixi run python ...`; dependencies come from `pixi.toml`.
     - Bash examples pretty-print JSON using [`jq`](https://jqlang.org/), so you may need to install it.
     - `TUDELFT_TULIP_CAPABILITY` chooses the path segment (`chat`, `code`, `embed`).
     - `TUDELFT_TULIP_MODEL_ALIAS` chooses the deployed model alias.
@@ -55,7 +56,7 @@ This tutorial covers two endpoints:
     Run:
 
     ```bash
-    python examples/python_responses_basic.py
+    pixi run python examples/python_responses_basic.py
     ```
 
 !!! success "Success looks like"
@@ -92,7 +93,7 @@ This tutorial covers two endpoints:
     Run:
 
     ```bash
-    python examples/python_chat_completions.py
+    pixi run python examples/python_chat_completions.py
     ```
 
 !!! success "Success looks like"
@@ -112,7 +113,7 @@ This tutorial covers two endpoints:
 Run:
 
 ```bash
-python examples/python_responses_async.py
+pixi run python examples/python_responses_async.py
 ```
 
 !!! success "Success looks like"
@@ -136,7 +137,7 @@ python examples/python_responses_async.py
 Run:
 
 ```bash
-python examples/python_responses_stream.py
+pixi run python examples/python_responses_stream.py
 ```
 
 !!! success "Success looks like"

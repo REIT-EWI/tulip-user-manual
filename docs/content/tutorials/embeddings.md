@@ -13,6 +13,7 @@ TUDELFT_TULIP_CAPABILITY=embed
 
 !!! info "What these examples assume"
     - Python examples load these values from `examples/common.py`.
+    - Python run commands use `pixi run python ...`; dependencies come from `pixi.toml`.
     - Bash examples pretty-print JSON using [`jq`](https://jqlang.org/), so you may need to install it.
     - `TUDELFT_TULIP_CAPABILITY` chooses the path segment (`embed`).
     - `TUDELFT_TULIP_MODEL_ALIAS` chooses the deployed model alias.
