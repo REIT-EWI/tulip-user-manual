@@ -5,7 +5,8 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 
 ### 1.1 Core Functionality
 
-- [x] OpenAI-compatible API (`/v1/chat/completions`, `/v1/completions`, `/v1/responses`)
+- [x] OpenAI-compatible API on capability namespaces (`/chat/v1`, `/code/v1`, `/embed/v1`)
+- [x] Capability aliases as primary user interface (`chat`, `code`, `embed`)
 - [x] Multi-model serving with NVIDIA Dynamo + vLLM
 - [x] Metrics exposed via Prometheus (`/metrics` endpoint)
 - [x] Model health checks (`/health`, `/live` endpoints)
@@ -13,6 +14,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [x] Basic logging of requests and errors
 - [x] Initial reference tests for smoketesting
 - [x] Basic documentation and examples
+- [ ] Tool-calling parity across endpoint styles (`/chat/v1/chat/completions` vs `/chat/v1/responses`)
 
 ### 1.2 Authentication & Access Control
 
@@ -72,18 +74,16 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 
 ### 1.8 Model portfolio & Management
 
-- [x] General assistant: Ministral 8B
-- [x] Coding assistant: Qwen2.5 Coder 14B
-- [x] GPT-style model: GPT-OSS-20B
+- [x] General assistant alias (`chat`) with mapped backing model
+- [x] Coding assistant alias (`code`) with mapped backing model
+- [x] Embedding alias (`embed`) with mapped backing model
 - [x] Streaming enabled (partial success)
-- [ ] Embedding model
-<!-- (eg, bge-large, Instructor, E5, etc.) -->
 - [ ] Multimodal model
  <!-- (eg, Qwen2-VL, LLaVA-style) -->
-- [ ] Reasoning model
+- [x] Reasoning model
  <!-- (eg, DeepSeek-R1 or small distilled variants) -->
 - [ ] Small fast model for high-throughput batches
-- [ ] Tool-calling enabled model
+- [x] Tool-calling enabled model (structured `tool_calls` verified for `code` alias)
 
 ### 1.9 Storage, CI/CD, & Infra
 - [x] GitOps via FluxCD
@@ -102,6 +102,6 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [x] Reference tests and examples
 - [ ] Acceptable Use Policy (AUP) for LLM usage
 - [ ] Data classification guidance (what NOT to send to the models)
-- [ ] Documentation on supported models and limits
+- [x] Documentation on supported models and limits
 - [ ] Governance model for adding/removing models
 - [ ] Support process (tickets, response time)
