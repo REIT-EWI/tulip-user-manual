@@ -28,9 +28,6 @@ For available embedding models and the current model-to-alias mapping, see [Mode
 
 ## Example Scripts
 
-Both scripts perform the same two checks against `/v1/embeddings`.
-Choose either Bash or Python based on your workflow.
-
 === "Bash"
 
     ```bash title="curl-embedding.sh" linenums="1"
@@ -56,14 +53,6 @@ Choose either Bash or Python based on your workflow.
     ```bash
     pixi run python examples/python_embedding.py
     ```
-
-## Validation Criteria
-
-Checks:
-
-- Embeddings endpoint availability.
-- Vector dimensionality consistency.
-- Different inputs produce different vectors.
 
 !!! success "Success looks like"
     - You receive embedding vectors for both input strings.
