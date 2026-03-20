@@ -13,11 +13,13 @@ TULIP exposes a single, unified API at **https://api.tulip.tudelft.nl** with Ope
 ## Your First Request
 
 Both examples below use the **Chat Completions** API.
+If you want configurable model selection (for example via `TUDELFT_TULIP_MODEL_ALIAS`), continue with [Chat & General Inference](../tutorials/chat-inference.md).
 
 ### Using `cURL`
 
 !!! tip "Try It Yourself"
-	This shell example expects `TUDELFT_TULIP_API_KEY` to be set and also uses `jq`.
+    This shell example expects `TUDELFT_TULIP_API_KEY` to be set and also uses [`jq`](https://jqlang.org/).
+    To keep setup simple, it uses the default `chat` model in the request body.
 
 ```bash title="curl-hello-tulip.sh" linenums="1"
 --8<-- "./examples/curl-hello-tulip.sh"
@@ -33,6 +35,7 @@ bash curl-hello-tulip.sh
 
 !!! tip "Try It Yourself"
     The Python example reads `TUDELFT_TULIP_API_KEY` from `.env` if present and assumes `openai` and `python-dotenv` are installed.
+    To keep setup simple, it uses the default `chat` model in the request body.
 
 ```python title="python_hello_tulip.py" linenums="1"
 --8<-- "./examples/python_hello_tulip.py"
