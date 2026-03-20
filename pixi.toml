@@ -7,12 +7,7 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-chat = "python tests/chat_completions.py"
-resp = "python tests/responses_basic.py"
-async = "python tests/responses_async.py"
-stream = "python tests/responses_stream.py"
-curl_responses = "bash tests/curl_responses.sh"
-curl_chat = "bash tests/curl_chat.sh"
+chat = "python examples/python_chat_completions.py"
 
 [pypi-dependencies]
 asyncio = ">=4.0.0, <5"
