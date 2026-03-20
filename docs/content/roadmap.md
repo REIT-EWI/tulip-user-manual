@@ -16,10 +16,9 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 
 ### 1.2 Authentication & Access Control
 
-- [ ] Token-based authentication (simple API keys)
+- [x] Token-based authentication (simple API keys)
 - [ ] TU Delft SSO / OIDC integration
 - [ ] Token scopes: rate-limit tiers
-- [ ] Automatic issuance of tokens through GitLab
 
 ### 1.3 Accounting, Logging, Usage Tracking
 
