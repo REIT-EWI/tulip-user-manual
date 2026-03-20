@@ -32,51 +32,35 @@ This tutorial covers two endpoints:
     
     *Reference:* [OpenAI Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create).
 
-### Bash
+=== "Bash"
 
-**Endpoint:** `/v1/responses`
+    ```bash title="curl-responses-basic.sh" linenums="1"
+    --8<-- "./examples/curl-responses-basic.sh"
+    ```
 
-```bash title="curl-responses-basic.sh" linenums="1"
---8<-- "./examples/curl-responses-basic.sh"
-```
+    Run:
 
-Checks:
+    ```bash
+    bash examples/curl-responses-basic.sh
+    ```
 
-- Basic request/response compatibility for the Responses API.
-- A short text generation flow using `curl`.
+=== "Python"
 
-Run:
+    **SDK:** OpenAI Python client (`OpenAI`)
 
-```bash
-bash examples/curl-responses-basic.sh
-```
+    ```python title="python_responses_basic.py" linenums="1"
+    --8<-- "./examples/python_responses_basic.py"
+    ```
 
-!!! success "Success looks like"
-    - You receive a structured Responses API object from `/v1/responses`.
-    - Output is valid JSON and includes model-generated text.
+    Run:
 
-### Python
-
-**SDK:** OpenAI Python client (`OpenAI`)
-
-```python title="python_responses_basic.py" linenums="1"
---8<-- "./examples/python_responses_basic.py"
-```
-
-Checks:
-
-- OpenAI-compatible `/v1/responses` behavior in Python.
-- Basic text output extraction from `response.output_text`.
-
-Run:
-
-```bash
-python examples/python_responses_basic.py
-```
+    ```bash
+    python examples/python_responses_basic.py
+    ```
 
 !!! success "Success looks like"
-    - Script prints `response.output_text`.
-    - Request succeeds without client-side errors.
+    - Bash: `curl-responses-basic.sh` prints a valid JSON response object from `/v1/responses`.
+    - Python: `python_responses_basic.py` prints extracted model text via `response.output_text`.
 
 ## Chat Completions
 
@@ -85,50 +69,35 @@ python examples/python_responses_basic.py
 
     *Reference:* [OpenAI Chat Completions API](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create).
 
-### Bash
+=== "Bash"
 
-Example script:
+    ```bash title="curl-chat-completions.sh" linenums="1"
+    --8<-- "./examples/curl-chat-completions.sh"
+    ```
 
-```bash title="curl-chat-completions.sh" linenums="1"
---8<-- "./examples/curl-chat-completions.sh"
-```
+    Run:
 
-Checks:
+    ```bash
+    bash examples/curl-chat-completions.sh
+    ```
 
-- The chat endpoint is reachable.
-- Your selected model can generate a regular assistant reply.
+=== "Python"
 
-Run:
+    **SDK:** OpenAI Python client (`OpenAI`)
 
-```bash
-bash examples/curl-chat-completions.sh
-```
+    ```python title="python_chat_completions.py" linenums="1"
+    --8<-- "./examples/python_chat_completions.py"
+    ```
 
-!!! success "Success looks like"
-    - `/v1/chat/completions` returns valid JSON with assistant content.
+    Run:
 
-### Python
-
-**SDK:** OpenAI Python client (`OpenAI`)
-
-```python title="python_chat_completions.py" linenums="1"
---8<-- "./examples/python_chat_completions.py"
-```
-
-Checks:
-
-- OpenAI-compatible chat-completions behavior through the Python SDK.
-- Basic message formatting and response parsing.
-
-Run:
-
-```bash
-python examples/python_chat_completions.py
-```
+    ```bash
+    python examples/python_chat_completions.py
+    ```
 
 !!! success "Success looks like"
-    - Script prints assistant text from `completion.choices[0].message.content`.
-    - No client or serialization errors are raised.
+    - Bash: `curl-chat-completions.sh` returns valid JSON from `/v1/chat/completions`.
+    - Python: `python_chat_completions.py` prints assistant text from `completion.choices[0].message.content`.
 
 ## Async & Streaming (Python)
 
@@ -139,11 +108,6 @@ python examples/python_chat_completions.py
 ```python title="python_responses_async.py" linenums="1"
 --8<-- "./examples/python_responses_async.py"
 ```
-
-Checks:
-
-- Asynchronous request flow for `/v1/responses`.
-- Event-loop compatibility for simple async generation.
 
 Run:
 
@@ -168,11 +132,6 @@ python examples/python_responses_async.py
 ```python title="python_responses_stream.py" linenums="1"
 --8<-- "./examples/python_responses_stream.py"
 ```
-
-Checks:
-
-- Streaming chunk emission from the model.
-- Incremental rendering of partial deltas.
 
 Run:
 
