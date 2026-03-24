@@ -8,6 +8,8 @@ version = "0.1.0"
 
 [tasks]
 chat = "python examples/python_chat_completions.py"
+smoke = "bash tests/smoke.sh"
+smoke-full = "bash tests/smoke-full.sh"
 
 [pypi-dependencies]
 asyncio = ">=4.0.0, <5"

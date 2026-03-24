@@ -9,3 +9,7 @@ __pycache__/
 # local environment variables
 .env
 .env-staging
+
+# smoke test logs
+logs/
+tests/logs/
