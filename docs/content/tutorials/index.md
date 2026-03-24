@@ -2,20 +2,23 @@
 
 This section contains practical, user-facing tutorials for common TULIP tasks.
 
+!!! info "TU Delft Network Access Required"
+    TULIP is only reachable from the TU Delft network. Off campus, connect via [eduVPN](https://tudelft.eduvpn.nl/portal/home) before using the API.
+
 ## Quick Setup
 
 1. Clone and enter the repository:
 
-```bash
-git clone https://gitlab.ewi.tudelft.nl/tulip/reference-tests.git
-cd reference-tests
-```
+    ```bash
+    git clone https://gitlab.ewi.tudelft.nl/tulip/reference-tests.git
+    cd reference-tests
+    ```
 
 2. Create your environment file:
 
-```bash
-cp .env.example .env
-```
+    ```bash
+    cp .env.example .env
+    ```
 
 3. Set your API key in `.env`.
 

@@ -2,13 +2,17 @@
 
 ## The Basics
 
-TULIP exposes a single, unified API at **https://api.tulip.tudelft.nl** with OpenAI-compatible endpoints for three capabilities:
+TULIP exposes a single, unified API at <https://api.tulip.tudelft.nl> with OpenAI-compatible endpoints for three capabilities:
 
 | Capability | Base Path | Use Case |
 | --- | --- | --- |
 | **Chat** | `/chat/v1` | Conversational AI with reasoning & tool calling |
 | **Code** | `/code/v1` | Code generation and reasoning |
 | **Embeddings** | `/embed/v1` | Text vectorization for semantic search & RAG |
+
+!!! warning "TU Delft Network Access Required"
+
+    TULIP is only reachable from the TU Delft network. Off campus, you must connect via [eduVPN](https://tudelft.eduvpn.nl/portal/home).
 
 ## Your First Request
 
