@@ -1,0 +1,30 @@
+# Parse and lint code as Python 3.13.
+target-version = "py313"
+
+# Keep formatting predictable and compatible with the common Black/Ruff default.
+line-length = 88
+
+# In this repo, docs should include code from examples/ or other real source files
+# rather than hosting standalone Python that needs linting.
+extend-exclude = [
+  "docs",
+]
+
+[lint]
+# Start with a small ruleset that is useful for example scripts without becoming noisy.
+select = [
+  "E",  # pycodestyle errors
+  "F",  # pyflakes correctness checks
+  "W",  # pycodestyle warnings
+  "I",  # import sorting
+  "UP", # safe pyupgrade suggestions
+  "B",  # bugbear: likely bugs / risky patterns
+]
+
+[format]
+# Match the default Ruff formatter style unless we have a reason to diverge.
+quote-style = "double"
+indent-style = "space"
+
+# If docstrings contain Python examples, Ruff may reformat those snippets too.
+docstring-code-format = true

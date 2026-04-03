@@ -43,31 +43,23 @@ This tutorial covers two endpoints:
 
 !!! info "Recommended approach"
     OpenAI recommends `/v1/responses` for new projects. It supports all capabilities (`chat`, `code`, `embed`) and provides a unified interface for text and non-text outputs.
-
-    *Reference:* [OpenAI Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create).
+    *For more,* see[OpenAI Responses API](https://developers.openai.com/api/reference/resources/responses/methods/create).
 
 === "Bash"
-
     ```bash title="curl-responses-basic.sh" linenums="1"
     --8<-- "./examples/curl-responses-basic.sh"
     ```
-
     Run:
-
     ```bash
     bash examples/curl-responses-basic.sh
     ```
 
 === "Python"
-
     **SDK:** OpenAI Python client (`OpenAI`)
-
     ```python title="python_responses_basic.py" linenums="1"
     --8<-- "./examples/python_responses_basic.py"
     ```
-
     Run:
-
     ```bash
     pixi run python examples/python_responses_basic.py
     ```
@@ -80,31 +72,23 @@ This tutorial covers two endpoints:
 
 !!! warning "Legacy endpoint (chat/completions only)"
     `/v1/chat/completions` is available for **chat** and **code** capabilities only. It does not support embeddings. For new projects or to work with all capabilities uniformly, prefer `/v1/responses` above.
-
-    *Reference:* [OpenAI Chat Completions API](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create).
+    *For more,* see[OpenAI Chat Completions API](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create).
 
 === "Bash"
-
     ```bash title="curl-chat-completions.sh" linenums="1"
     --8<-- "./examples/curl-chat-completions.sh"
     ```
-
     Run:
-
     ```bash
     bash examples/curl-chat-completions.sh
     ```
 
 === "Python"
-
     **SDK:** OpenAI Python client (`OpenAI`)
-
     ```python title="python_chat_completions.py" linenums="1"
     --8<-- "./examples/python_chat_completions.py"
     ```
-
     Run:
-
     ```bash
     pixi run python examples/python_chat_completions.py
     ```
@@ -140,8 +124,7 @@ pixi run python examples/python_responses_async.py
 !!! warning
     Some deployments may not expose OpenAI Responses streaming events yet.
     This example uses chat-completions streaming for maximum compatibility.
-
-    *Reference:* [OpenAI Streaming Responses guide](https://developers.openai.com/api/docs/guides/streaming-responses).
+    *For more,* see[OpenAI Streaming Responses guide](https://developers.openai.com/api/docs/guides/streaming-responses).
 
 ```python title="python_responses_stream.py" linenums="1"
 --8<-- "./examples/python_responses_stream.py"

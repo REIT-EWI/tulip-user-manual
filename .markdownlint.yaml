@@ -1,0 +1,30 @@
+# Start with all markdownlint rules enabled, then relax a few that are noisy
+# for docs sites with front matter, long URLs, and examples.
+default: true
+
+# Use standard ATX headings like "## Title".
+MD003:
+  style: atx
+
+# Do not enforce max line length (notorious for links, tables, API snippets).
+MD013: false
+
+# Allow duplicate headings as long as they are in different sections.
+MD024:
+  siblings_only: true
+
+# Allow multiple H1 headings (common when front matter title is present).
+MD025: false
+
+# Allow inline HTML (for example <details>/<summary> blocks in docs pages).
+MD033: false
+
+# Do not require the first line to be an H1 (front matter is often first).
+MD041: false
+
+# Require fenced code blocks (```), not indented code blocks.
+MD046:
+  style: fenced
+
+# Do not require strict table pipe alignment.
+MD060: false

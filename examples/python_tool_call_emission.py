@@ -1,5 +1,9 @@
+from common import (
+    TUDELFT_TULIP_API_KEY,
+    TUDELFT_TULIP_BASE_URL,
+    TUDELFT_TULIP_MODEL_ALIAS,
+)
 from openai import OpenAI
-from common import TUDELFT_TULIP_BASE_URL, TUDELFT_TULIP_API_KEY, TUDELFT_TULIP_MODEL_ALIAS
 
 client = OpenAI(base_url=TUDELFT_TULIP_BASE_URL, api_key=TUDELFT_TULIP_API_KEY)
 model = TUDELFT_TULIP_MODEL_ALIAS
@@ -23,7 +27,10 @@ completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Call the get_system_health tool now. Do not answer in natural language.",
+            "content": (
+                "Call the get_system_health tool now. Do not ",
+                "answer in natural language.",
+            ),
         }
     ],
     tools=tools,

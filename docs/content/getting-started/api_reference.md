@@ -5,12 +5,10 @@
 TULIP exposes a single API domain: <https://api.tulip.tudelft.nl>
 
 !!! warning "TU Delft Network Access Required"
-
     TULIP is only reachable from the TU Delft network. Off campus, you must connect via [eduVPN](https://tudelft.eduvpn.nl/portal/home) before using this endpoint.
 
 !!! info "Update"
-
-    The previous endpoint `https://embedding.tulip.tudelft.nl` has been phased out. 
+    The previous endpoint `https://embedding.tulip.tudelft.nl` has been phased out.
     Embedding models are now available under the unified API domain: `https://api.tulip.tudelft.nl/embed/v1`.
 
 ## Authentication

@@ -86,6 +86,7 @@ _A maturity checklist inspired by [ALCF's Inference Service](https://docs.alcf.a
 - [x] Tool-calling enabled model (structured `tool_calls` verified for `code` alias)
 
 ### 1.9 Storage, CI/CD, & Infra
+
 - [x] GitOps via FluxCD
 - [x] Local path storage for model cache
 - [x] Separate staging vs production clusters

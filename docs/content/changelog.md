@@ -9,12 +9,12 @@
 ### Documentation & Examples
 
 - Complete documentation restructure with:
-    - Clear Getting Started flow
-    - Capability-based API reference
-    - Explicit model mapping
+  - Clear Getting Started flow
+  - Capability-based API reference
+  - Explicit model mapping
 - Removed outdated or unverified content
 - Added validated, copy-paste examples for core capabilities:
-    - Chat, Responses API, Embeddings, Tool calling
+  - Chat, Responses API, Embeddings, Tool calling
 
 ### Known limitations
 
@@ -46,17 +46,17 @@
 ### Migration
 
 Old endpoint:
-https://embedding.tulip.tudelft.nl/v1/embeddings
+<https://embedding.tulip.tudelft.nl/v1/embeddings>
 
 New endpoint:
-https://api.tulip.tudelft.nl/embed/v1/embeddings
+<https://api.tulip.tudelft.nl/embed/v1/embeddings>
 
 ## v0.1.1-alpha: Embedding Support (2026-03-06)
 
 Added
 
 - OpenAI-compatible embeddings endpoint
-- Dedicated embedding API base URL: https://embedding.tulip.tudelft.nl
+- Dedicated embedding API base URL: <https://embedding.tulip.tudelft.nl>
 - Initial embedding model: `Qwen/Qwen3-Embedding-8B` (4096-dim)
 
 Documentation
@@ -68,7 +68,6 @@ Notes
 
 - Authentication remains disabled during the pilot phase
 - Model availability may evolve as the platform matures
-
 
 ## v0.1.0-alpha: Pilot Launch (2025-11-27)
 

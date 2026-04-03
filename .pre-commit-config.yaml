@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.9
+    hooks:
+      - id: ruff
+        files: ^examples/.*\.pyi?$
+        args: [--fix, --show-fixes]
+      - id: ruff-format
+        files: ^examples/.*\.pyi?$
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.48.0
+    hooks:
+      - id: markdownlint
+        args: ["--config", ".markdownlint.yaml", "--fix"]
+        files: ^(docs/content/.*\.md$|readme\.md$)
+        exclude: ^docs/public/
+

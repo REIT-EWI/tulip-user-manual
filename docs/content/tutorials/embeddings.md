@@ -33,8 +33,7 @@ TUDELFT_TULIP_CAPABILITY=embed
 
 !!! info "Endpoint"
     Embeddings are available at `/v1/embeddings`.
-
-    *Reference:* [OpenAI Embeddings API](https://developers.openai.com/api/reference/resources/embeddings/methods/create).
+    *For more,* see[OpenAI Embeddings API](https://developers.openai.com/api/reference/resources/embeddings/methods/create).
 
 ## Supported Models
 
@@ -43,27 +42,20 @@ For available embedding models and the current model-to-alias mapping, see [Mode
 ## Example Scripts
 
 === "Bash"
-
     ```bash title="curl-embedding.sh" linenums="1"
     --8<-- "./examples/curl-embedding.sh"
     ```
-
     Run:
-
     ```bash
     bash examples/curl-embedding.sh
     ```
 
 === "Python"
-
     **SDK:** OpenAI Python client (`OpenAI`)
-
     ```python title="python_embedding.py" linenums="1"
     --8<-- "./examples/python_embedding.py"
     ```
-
     Run:
-
     ```bash
     pixi run python examples/python_embedding.py
     ```
