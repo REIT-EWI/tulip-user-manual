@@ -8,11 +8,13 @@ repos:
       - id: ruff-format
         files: ^examples/.*\.pyi?$
 
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.48.0
+  - repo: local
     hooks:
-      - id: markdownlint
-        args: ["--config", ".markdownlint.yaml", "--fix"]
+      - id: markdownlint-pixi
+        name: markdownlint via pixi
+        entry: pixi run format-docs
+        language: system
+        pass_filenames: false
         files: ^(docs/content/.*\.md$|readme\.md$)
         exclude: ^docs/public/
 
