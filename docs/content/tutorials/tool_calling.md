@@ -11,6 +11,8 @@ TUDELFT_TULIP_MODEL_ALIAS=code
 TUDELFT_TULIP_CAPABILITY=code
 ```
 
+Set `TUDELFT_TULIP_BASE_URL` to host root only (for example `https://api.tulip.tudelft.nl`). The Python helper normalizes it to a capability-specific `/v1` endpoint automatically.
+
 !!! info "What these examples assume"
     - The Python snippets on this page assume a local helper file `common.py` that loads environment variables and exports shared constants.
     - If you cloned this repository, `examples/common.py` is already present and the scripts run as shown below.

@@ -45,6 +45,7 @@ Timestamped logs are written to `tests/logs/` for inspection.
 ### Run one example manually
 
 Examples source `./.env`, so `TUDELFT_TULIP_CAPABILITY` and `TUDELFT_TULIP_MODEL_ALIAS` from `.env` determine the route/model pair used by curl scripts.
+Use `TUDELFT_TULIP_BASE_URL` as host root in `.env` (for example `https://api.tulip.tudelft.nl`); Python examples normalize it internally to capability-specific `/v1` endpoints.
 
 If you see a `404` like `chat/completions` on `embed`, it usually means capability and endpoint intent do not match. For chat completions, use a chat/code capability and matching alias in `.env`.
 

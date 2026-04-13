@@ -28,8 +28,8 @@ completion = client.chat.completions.create(
         {
             "role": "user",
             "content": (
-                "Call the get_system_health tool now. Do not ",
-                "answer in natural language.",
+                "Call the get_system_health tool now. "
+                "Do not answer in natural language."
             ),
         }
     ],

@@ -18,7 +18,7 @@ completion = client.chat.completions.create(
         {
             "role": "user",
             "content": (
-                "Write a tiny Python function that prints the TU Delft logo in ASCII.",
+                "Write a tiny Python function that prints the TU Delft logo in ASCII."
             ),
         },
     ],
