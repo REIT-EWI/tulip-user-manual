@@ -34,5 +34,6 @@ This section contains practical, user-facing tutorials for common TULIP tasks.
 - [Embeddings](embeddings.md)
 - [Tool Calling](tool_calling.md)
 - [OpenHarness Integration](openharness.md)
+- [Jan.ai Integration](jan-ai.md)
 
 Each tutorial includes runnable Bash and Python examples.

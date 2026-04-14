@@ -25,7 +25,8 @@ nav = [
         {"Chat & General Inference" = "tutorials/chat-inference.md"},
         {"Embeddings" = "tutorials/embeddings.md"},
         {"Tool Calling" = "tutorials/tool_calling.md"},
-        {"OpenHarness Integration" = "tutorials/openharness.md"}
+        {"OpenHarness Integration" = "tutorials/openharness.md"},
+        {"Jan.ai Integration" = "tutorials/jan-ai.md"}
     ]},
     {"Data handling" = "data_handling.md"},
     {"Changelog" = "changelog.md"},
