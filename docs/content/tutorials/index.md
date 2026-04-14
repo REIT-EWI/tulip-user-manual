@@ -33,5 +33,6 @@ This section contains practical, user-facing tutorials for common TULIP tasks.
 - [Chat & General Inference](chat-inference.md)
 - [Embeddings](embeddings.md)
 - [Tool Calling](tool_calling.md)
+- [OpenHarness Integration](openharness.md)
 
 Each tutorial includes runnable Bash and Python examples.
