@@ -23,6 +23,19 @@ export TUDELFT_TULIP_API_KEY="<your_api_key>"
 
 If you need access, get in touch at [tulip-reit@tudelft.nl](mailto:tulip-reit@tudelft.nl).
 
+## Usage limits
+
+TULIP currently applies protective request limits at the ingress layer to help prevent overload during early use.
+
+At the moment:
+
+- limits are applied per client IP
+- `chat`/`code` routes are more restrictive than `embeddings`
+- requests may return `503` if limits are exceeded
+
+!!! warning "Usage Limits"
+    If you encounter unexpected errors or unusual latency during normal use, especially from notebooks or scripts, please get in touch at [tulip-reit@tudelft.nl](mailto:tulip-reit@tudelft.nl).
+
 ## Available Endpoints
 
 Each capability exposes its own OpenAI-compatible API namespace:
