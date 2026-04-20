@@ -39,15 +39,40 @@ mkdir -p "${LOG_DIR}"
 LOG_FILE="${LOG_DIR}/smoke-full-$(date +%d%m%y-%H%M).log"
  : > "${LOG_FILE}"
 
+TMP_REPO_ROOT="$(mktemp -d)"
+TMP_EXAMPLES_DIR="${TMP_REPO_ROOT}/examples"
+mkdir -p "${TMP_EXAMPLES_DIR}"
+cp -a "${EXAMPLES_DIR}/." "${TMP_EXAMPLES_DIR}/"
+
+cleanup() {
+  rm -rf "${TMP_REPO_ROOT}"
+}
+trap cleanup EXIT
+
+write_example_env() {
+  local capability="$1"
+  local alias="$2"
+
+  cat > "${TMP_REPO_ROOT}/.env" <<EOF
+TUDELFT_TULIP_API_KEY=${TUDELFT_TULIP_API_KEY}
+TUDELFT_TULIP_BASE_URL=${TUDELFT_TULIP_BASE_URL}
+TUDELFT_TULIP_CAPABILITY=${capability}
+TUDELFT_TULIP_MODEL_ALIAS=${alias}
+EOF
+}
 run_example() {
   local capability="$1"
   local alias="$2"
-  local runner="$3"
+  local runner="$3" # e.g. "bash" or "python"
   local script_path="$4"
+  local relative_script_path
+  local temp_script_path
 
-  TUDELFT_TULIP_CAPABILITY="${capability}" \
-  TUDELFT_TULIP_MODEL_ALIAS="${alias}" \
-  "${runner}" "${script_path}"
+  write_example_env "${capability}" "${alias}"
+  relative_script_path="${script_path#${EXAMPLES_DIR}/}"
+  temp_script_path="${TMP_EXAMPLES_DIR}/${relative_script_path}"
+
+  "${runner}" "${temp_script_path}"
 }
 
 run_and_expect_success() {
