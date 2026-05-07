@@ -34,12 +34,15 @@ models:
 
 context:
   - provider: code
-  - provider: docs
+  - provider: file
   - provider: diff
   - provider: terminal
   - provider: problems
-  - provider: folder
-  - provider: codebase
+# Optional: add these later if you want broader project retrieval.
+# - provider: docs
+# - provider: codebase
+# - provider: folder
+
 ```
 
 Replace `YOUR_TULIP_API_KEY` with your actual TULIP API key, then save the
