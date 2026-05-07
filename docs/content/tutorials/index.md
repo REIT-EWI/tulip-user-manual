@@ -34,6 +34,7 @@ This section contains practical, user-facing tutorials for common TULIP tasks.
 - [Embeddings](embeddings.md)
 - [Tool Calling](tool_calling.md)
 - [VS Code Integration](tulip-vscode.md)
+- [OpenCode Integration](opencode.md)
 - [OpenHarness Integration](openharness.md)
 - [Jan.ai Integration](jan-ai.md)
 
