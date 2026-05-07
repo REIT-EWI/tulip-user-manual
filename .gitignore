@@ -6,6 +6,9 @@
 
 __pycache__/
 
+# tool caches
+.pre-commit-cache/
+
 # local environment variables
 .env
 .env-staging
