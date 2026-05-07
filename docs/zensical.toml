@@ -25,6 +25,7 @@ nav = [
         {"Chat & General Inference" = "tutorials/chat-inference.md"},
         {"Embeddings" = "tutorials/embeddings.md"},
         {"Tool Calling" = "tutorials/tool_calling.md"},
+        {"VS Code Integration" = "tutorials/tulip-vscode.md"},
         {"OpenHarness Integration" = "tutorials/openharness.md"},
         {"Jan.ai Integration" = "tutorials/jan-ai.md"}
     ]},

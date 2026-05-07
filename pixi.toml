@@ -13,11 +13,11 @@ smoke-full = "bash tests/smoke-full.sh"
 lint = "ruff check --fix examples"
 format = "ruff format examples"
 fix = { depends-on = ["format", "lint"] }
-install-hooks = "pre-commit install"
+install-hooks = "python -m pre_commit install"
 lint-docs = "markdownlint 'docs/content/**/*.md' 'readme.md'"
 format-docs = "markdownlint --fix 'docs/content/**/*.md' 'readme.md'"
 fix-docs = { depends-on = ["format-docs", "lint-docs"] }
-pre-commit = "pre-commit run --all-files"
+pre-commit = "python -m pre_commit run --all-files"
 
 
 

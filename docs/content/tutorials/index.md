@@ -33,7 +33,9 @@ This section contains practical, user-facing tutorials for common TULIP tasks.
 - [Chat & General Inference](chat-inference.md)
 - [Embeddings](embeddings.md)
 - [Tool Calling](tool_calling.md)
+- [VS Code Integration](tulip-vscode.md)
 - [OpenHarness Integration](openharness.md)
 - [Jan.ai Integration](jan-ai.md)
 
-Each tutorial includes runnable Bash and Python examples.
+The API tutorials include runnable Bash and Python examples. Integration
+tutorials focus on configuring TULIP in external tools.
