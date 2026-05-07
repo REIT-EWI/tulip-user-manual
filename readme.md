@@ -2,6 +2,16 @@
 title: "Home"
 ---
 
+## Repo structure
+
+```bash
+tulip-manual/    
+├── docs/        #  documentation source files (Markdown + assets)
+├── examples/    #  user-facing scripts shown in docs (and smoke tests)
+├── tests/       #  quick "does the documented API still work?" checks
+└── benchmarks/  #  heavier operational validation: latency, concurrency, saturation    
+```
+
 ## Tulip docs
 
 Guides, tutorials, and reference information.
@@ -17,7 +27,11 @@ This will publish the documentation at [localhost:8000](http://localhost:8000/) 
 
 [Zensical Documentation](https://zensical.org/){ .md-button }
 
-## Smoke gate
+## Benchmarks
+
+For the benchmark workspace, baseline runners, and result dashboard workflow, see [benchmarks/README.md](benchmarks/README.md).
+
+## Tests: Smoke gate
 
 Two release gates live in `tests/` and both run a fixed, in-script test matrix (hardcoded checks and invocation order).
 
@@ -42,7 +56,7 @@ Timestamped logs are written to `tests/logs/` for inspection.
 `smoke` makes direct API calls with strong `jq` shape assertions.
 `smoke-full` invokes each docs example script directly. It sets capability and model alias env vars per test, and each script also sources `.env` when present.
 
-### Run one example manually
+## Examples
 
 Examples source `./.env`, so `TUDELFT_TULIP_CAPABILITY` and `TUDELFT_TULIP_MODEL_ALIAS` from `.env` determine the route/model pair used by curl scripts.
 Use `TUDELFT_TULIP_BASE_URL` as host root in `.env` (for example `https://api.tulip.tudelft.nl`); Python examples normalize it internally to capability-specific `/v1` endpoints.

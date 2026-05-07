@@ -39,15 +39,15 @@ Add your TULIP API key with the `profile:tulip` key:
 }
 ```
 
-!!! note "Multiple Providers"
-    If you have other providers configured (e.g., OpenAI), keep them alongside the TULIP entry:
+**Multiple providers:** If you have other providers configured (e.g., OpenAI),
+keep them alongside the TULIP entry:
 
-    ```json
-    {
-      "openai": {"api_key": "sk-your-openai-key"},
-      "profile:tulip": {"api_key": "your-tulip-api-key"}
-    }
-    ```
+```json
+{
+  "openai": {"api_key": "sk-your-openai-key"},
+  "profile:tulip": {"api_key": "your-tulip-api-key"}
+}
+```
 
 ### 3. Activate the Profile
 

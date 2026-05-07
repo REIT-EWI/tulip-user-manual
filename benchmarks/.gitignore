@@ -1,0 +1,10 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# Benchmark artifacts: keep only curated summary outputs, never raw runs or logs.
+artifacts/**
+!artifacts/**/
+!artifacts/**/summary/
+!artifacts/**/summary/**
+artifacts/**/summary/**/*.log
