@@ -1,14 +1,23 @@
 from common import (
     TUDELFT_TULIP_API_KEY,
     TUDELFT_TULIP_BASE_URL,
-    TUDELFT_TULIP_MODEL_ALIAS,
 )
 from openai import OpenAI
 
-client = OpenAI(base_url=TUDELFT_TULIP_BASE_URL, api_key=TUDELFT_TULIP_API_KEY)
+CHAT_CAPABILITY = "chat"
+CHAT_MODEL_ALIAS = "chat"
+
+_base_url = TUDELFT_TULIP_BASE_URL.rstrip("/")
+if _base_url.endswith("/v1"):
+    _base_url = _base_url[: -len("/v1")]
+if _base_url.endswith((f"/{CHAT_CAPABILITY}", "/code", "/embed")):
+    _base_url = _base_url.rsplit("/", 1)[0]
+CHAT_BASE_URL = f"{_base_url}/{CHAT_CAPABILITY}/v1"
+
+client = OpenAI(base_url=CHAT_BASE_URL, api_key=TUDELFT_TULIP_API_KEY)
 
 stream = client.chat.completions.create(
-    model=TUDELFT_TULIP_MODEL_ALIAS,
+    model=CHAT_MODEL_ALIAS,
     temperature=0.2,
     stream=True,
     messages=[

@@ -1,18 +1,22 @@
 import math
-import os
 
-from dotenv import load_dotenv
+from common import (
+    TUDELFT_TULIP_API_KEY,
+    TUDELFT_TULIP_BASE_URL,
+)
 from openai import OpenAI
 
-load_dotenv()
+EMBED_CAPABILITY = "embed"
+EMBED_MODEL_ALIAS = "embed"
 
-TUDELFT_TULIP_API_KEY = os.getenv("TUDELFT_TULIP_API_KEY", "DUMMY_KEY")
-TUDELFT_TULIP_MODEL_ALIAS = "embed"
+_base_url = TUDELFT_TULIP_BASE_URL.rstrip("/")
+if _base_url.endswith("/v1"):
+    _base_url = _base_url[: -len("/v1")]
+if _base_url.endswith(("/chat", "/code", "/embed")):
+    _base_url = _base_url.rsplit("/", 1)[0]
+EMBED_BASE_URL = f"{_base_url}/{EMBED_CAPABILITY}/v1"
 
-_base_url = os.getenv("TUDELFT_TULIP_BASE_URL", "https://api.tulip.tudelft.nl")
-TUDELFT_TULIP_BASE_URL = f"{_base_url.rstrip('/')}/embed/v1"
-
-client = OpenAI(base_url=TUDELFT_TULIP_BASE_URL, api_key=TUDELFT_TULIP_API_KEY)
+client = OpenAI(base_url=EMBED_BASE_URL, api_key=TUDELFT_TULIP_API_KEY)
 
 query = "Where does it say whether group work is allowed in assessment?"
 document_chunks = [
@@ -30,7 +34,7 @@ document_chunks = [
 ]
 
 response = client.embeddings.create(
-    model=TUDELFT_TULIP_MODEL_ALIAS,
+    model=EMBED_MODEL_ALIAS,
     input=[query, *document_chunks],
     encoding_format="float",
 )
