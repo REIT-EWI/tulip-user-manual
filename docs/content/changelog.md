@@ -1,3 +1,18 @@
+## v0.4.0-alpha (2026-06-18)
+
+### Changed
+
+- Updated the TULIP serving runtime to Dynamo/vLLM `1.2.1`.
+- Migrated Dynamo model deployment manifests to `nvidia.com/v1beta1`.
+- Refreshed the backend models behind the existing public aliases:
+  - `chat` → `google/gemma-4-31B-it-qat-w4a16-ct`
+  - `code` → `Qwen/Qwen3.6-27B-FP8`
+
+### Notes
+
+- API paths and public aliases remain unchanged.
+- The `code` model currently uses a conservative runtime profile for stability.
+
 ## v0.3.0-alpha Usability & Access (2026-03-20)
 
 ### API & Access
