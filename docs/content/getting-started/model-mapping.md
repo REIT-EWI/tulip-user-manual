@@ -4,8 +4,8 @@ TULIP currently deploys models optimized for three different tasks. Models are i
 
 | Capability | Alias | Current Backing Model | Notes |
 | ---------- | ----- | --------------------------------------- | ------ |
-| Chat | `chat` | `openai/gpt-oss-20b` | Default chat model; tool-calling format may vary by serving/parser configuration |
-| Coding | `code` | `Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8` | Supports code generation and reasoning; verified in reference tests for structured OpenAI-style tool calling (`message.tool_calls`) |
+| Chat | `chat` | `google/gemma-4-31B-it-qat-w4a16-ct` | Default chat model; tool-calling format may vary by serving/parser configuration |
+| Coding | `code` | `Qwen/Qwen3.6-27B-FP8` | Supports code generation and reasoning; verified in reference tests for structured OpenAI-style tool calling (`message.tool_calls`) |
 | Embedding | `embed` | `Qwen/Qwen3-Embedding-8B` | 4096-dimensional embeddings for retrieval and semantic search |
 
 <details>
