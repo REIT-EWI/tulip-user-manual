@@ -10,25 +10,30 @@ Use the [Hermes agent harness](https://hermes-agent.nousresearch.com/) by Nous R
 
 ## Setup
 
-Hermes reads its configuration from `~/.hermes/config.yaml`. Point the main model at TULIP by setting a custom base URL:
+Hermes reads its configuration from `~/.hermes/config.yaml`. Define TULIP as a named provider so it appears under its own name in the Hermes menus:
 
 ```yaml
 model:
+  provider: custom:tulip
   default: chat
-  provider: custom
-  base_url: https://api.tulip.tudelft.nl/chat/v1
-  api_key: YOUR_TULIP_TOKEN
+providers:
+  tulip:
+    api: https://api.tulip.tudelft.nl/chat/v1
+    name: "TULIP"
+    api_key: YOUR_TULIP_TOKEN
+    default_model: chat
+    models:
+      chat:
+        context_length: 65536
 ```
 
-`default` is the model name sent in requests; use `chat` for the chat endpoint (see [Available Models](../getting-started/model-mapping.md)). When `base_url` is set, Hermes bypasses its built-in providers and sends OpenAI-format requests directly to that URL.
-
-Instead of `api_key` in the config file, the token can be placed in `~/.hermes/.env` as `OPENAI_API_KEY=YOUR_TULIP_TOKEN`. Setting it inline in `config.yaml` is the more reliable option with the current desktop app.
+`chat` is the model id sent in requests (the TULIP chat endpoint serves this single model); `name` is only the display label. Hermes sends OpenAI-format requests directly to the configured `api` URL.
 
 After changing the configuration, quit Hermes completely (Cmd+Q on macOS; closing the window is not enough) and reopen it.
 
-## Desktop app limitation
+## Desktop app note
 
-The Hermes desktop model picker only lists built-in providers and does not show custom endpoints ([tracked upstream](https://github.com/NousResearch/hermes-agent/issues/38975)). New sessions still use the `model.default` from the config file, so start a chat without selecting a model in the picker. The Hermes CLI reads the same configuration and is not affected.
+With a named provider the desktop model picker lists the model under the configured display name after a full restart of the app (Cmd+Q, not just closing the window). Some desktop versions do not list custom endpoints in the picker ([tracked upstream](https://github.com/NousResearch/hermes-agent/issues/38975)); sessions then still use `model.default` from the config file, so start a chat without selecting a model. The Hermes CLI reads the same configuration and is unaffected either way.
 
 ## Auxiliary model routing
 
