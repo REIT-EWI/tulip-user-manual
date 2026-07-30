@@ -33,7 +33,7 @@ After changing the configuration, quit Hermes completely (Cmd+Q on macOS; closin
 
 ## Desktop app note
 
-With a named provider the desktop model picker lists the model under the configured display name after a full restart of the app (Cmd+Q, not just closing the window). Some desktop versions do not list custom endpoints in the picker ([tracked upstream](https://github.com/NousResearch/hermes-agent/issues/38975)); sessions then still use `model.default` from the config file, so start a chat without selecting a model. The Hermes CLI reads the same configuration and is unaffected either way.
+After a full restart, click the model name in the chat view to open the model menu, use its search field to look for `tulip`, and select the `chat` model listed under the TULIP provider. The model itself is always shown by its API id; Hermes has no client-side model rename. If your desktop version does not list custom providers in the picker ([tracked upstream](https://github.com/NousResearch/hermes-agent/issues/38975)), sessions still use `model.default` from the config file, so start a chat without selecting a model. The Hermes CLI reads the same configuration and is unaffected either way.
 
 ## Auxiliary model routing
 
@@ -51,7 +51,7 @@ auxiliary:
 
 ### HTTP 401: Missing Authentication header
 
-Hermes did not send the token. Set `api_key` directly in the `model:` block of `~/.hermes/config.yaml` and fully restart the app.
+Hermes did not send the token. Set `api_key` inline in the provider entry as shown above (`OPENAI_API_KEY` in `~/.hermes/.env` is not reliably picked up by the desktop app) and fully restart the app.
 
 ### Connection timeout
 
