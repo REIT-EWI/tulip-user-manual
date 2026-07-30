@@ -27,7 +27,8 @@ nav = [
         {"Tool Calling" = "tutorials/tool_calling.md"},
         {"VS Code Integration" = "tutorials/tulip-vscode.md"},
         {"OpenHarness Integration" = "tutorials/openharness.md"},
-        {"Jan.ai Integration" = "tutorials/jan-ai.md"}
+        {"Jan.ai Integration" = "tutorials/jan-ai.md"},
+        {"Hermes Integration" = "tutorials/hermes.md"}
     ]},
     {"Data handling" = "data_handling.md"},
     {"Changelog" = "changelog.md"},
