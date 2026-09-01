@@ -15,6 +15,7 @@ nav = [
     {"Home" = "index.md"},
     {"Getting Started" = [
         {"Overview" = "getting-started/index.md"},
+        {"Requesting Access" = "getting-started/access.md"},
         {"Your First Request" = "getting-started/first-interaction.md"},
         {"Available Models" = "getting-started/model-mapping.md"},
         {"API Reference" = "getting-started/api_reference.md"},
