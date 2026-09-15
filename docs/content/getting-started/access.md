@@ -1,6 +1,7 @@
 # Requesting Access
 
-TULIP access is managed through [SURF Research Access Management (SRAM)](https://sram.surf.nl/). You join a collaboration once, then issue and revoke your own tokens without contacting the TULIP team.
+TULIP access is managed through [SURF Research Access Management (SRAM)](https://sram.surf.nl/).
+You only need to complete this setup once: if you already have a collaboration invite, go straight to [Step 2](#step-2-create-an-application-token); otherwise complete [Step 1](#step-1-join-the-collaboration) and then [Step 2](#step-2-create-an-application-token).
 
 ## Step 1: Join the collaboration
 
@@ -12,6 +13,8 @@ TULIP access is managed through [SURF Research Access Management (SRAM)](https:/
 Processing usually takes one to two business days. You receive an email once you are approved.
 
 ## Step 2: Create an application token
+
+This SRAM application token is the API key you use with TULIP clients and examples.
 
 1. Log in to [sram.surf.nl](https://sram.surf.nl/).
 2. Go to **Profile** and then **Application Tokens**.
@@ -27,8 +30,4 @@ Processing usually takes one to two business days. You receive an email once you
 
 Your access tier follows your group membership within the collaboration. Administrators manage that membership; there is nothing to configure on your side.
 
-## Legacy API keys
-
-Keys issued before the SRAM migration (`sk-tulip-...`) keep working until **September 15, 2026**, when they are disabled. Switch to an SRAM application token before that date.
-
-Once you have a token, continue with [Your First Request](first-interaction.md).
+Once you have your API key, continue with [Your First Request](first-interaction.md).

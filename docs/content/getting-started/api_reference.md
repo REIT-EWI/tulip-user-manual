@@ -13,15 +13,15 @@ TULIP exposes a single API domain: <https://api.tulip.tudelft.nl>
 
 ## Authentication
 
-Authentication is required for all endpoints.
+Authentication is required for all endpoints. Use your **SRAM application token** as the API key. Requests send it in the `Authorization: Bearer` header.
 
-Set your key with:
+Set your SRAM application token with:
 
 ```bash
-export TUDELFT_TULIP_API_KEY="<your_api_key>"
+export TUDELFT_TULIP_API_KEY="YOUR_SRAM_APPLICATION_TOKEN"
 ```
 
-If you need access, get in touch at [tulip-reit@tudelft.nl](mailto:tulip-reit@tudelft.nl).
+See [Request Access](access.md) for instructions on joining the collaboration and creating your SRAM application token.
 
 ## Usage limits
 

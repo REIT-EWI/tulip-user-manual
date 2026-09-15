@@ -38,7 +38,7 @@ Two release gates live in `tests/` and both run a fixed, in-script test matrix (
 `smoke` runs hardcoded API calls in place (`models`, `chat/completions`, `embeddings`) with strict `jq` shape assertions.
 `smoke-full` runs a hardcoded list of example scripts in place (7 bash + 8 Python) and gates on exit code.
 
-1. Copy `.env.example` to `.env` and set `TUDELFT_TULIP_API_KEY`.
+1. Copy `.env.example` to `.env` and set `TUDELFT_TULIP_API_KEY` to your SRAM application token. See [Requesting Access](docs/content/getting-started/access.md).
 2. If your deployment uses non-default model aliases, override `TUDELFT_TULIP_CHAT_ALIAS`, `TUDELFT_TULIP_CODE_ALIAS`, and `TUDELFT_TULIP_EMBED_ALIAS` (all default to `chat`, `code`, `embed`).
 3. Run `pixi run smoke` for the fast gate.
 4. Run `pixi run smoke-full` to verify every example script runs successfully.

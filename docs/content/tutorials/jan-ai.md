@@ -5,7 +5,7 @@ Use [Jan.ai](https://jan.ai/) as a desktop AI client with TULIP.
 ## Prerequisites
 
 - Jan.ai installed ([download](https://jan.ai/download))
-- A valid TULIP API key
+- An SRAM application token to use as your TULIP API key. See [Request Access](../getting-started/access.md).
 - Access to the TU Delft network (or eduVPN)
 
 ## Setup
@@ -16,7 +16,7 @@ Use [Jan.ai](https://jan.ai/) as a desktop AI client with TULIP.
 2. Go to **Settings** (gear icon)
 3. Click the **+** button next to **MODEL PROVIDERS**
 4. Enter a **Name** (e.g., `TULIP Chat` or `TULIP Code`)
-5. Enter your **API Key** (TULIP API key)
+5. Enter your SRAM application token in the **API Key** field.
 6. Enter the **Base URL** for your use case:
    - Chat models: `https://api.tulip.tudelft.nl/chat/v1`
    - Code models: `https://api.tulip.tudelft.nl/code/v1`

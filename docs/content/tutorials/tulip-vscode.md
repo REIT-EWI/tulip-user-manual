@@ -12,7 +12,7 @@ providers, so it can talk to TULIP's `code` endpoint directly.
 
 - Visual Studio Code
 - The [Continue extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Continue.continue)
-- A valid TULIP API key
+- An SRAM application token to use as your TULIP API key. See [Request Access](../getting-started/access.md).
 
 ## Configure Continue
 
@@ -29,7 +29,7 @@ models:
   - name: TULIP
     provider: openai
     model: AUTODETECT
-    apiKey: YOUR_TULIP_API_KEY
+    apiKey: YOUR_SRAM_APPLICATION_TOKEN
     apiBase: https://api.tulip.tudelft.nl/code/v1
 
 context:
@@ -45,7 +45,7 @@ context:
 
 ```
 
-Replace `YOUR_TULIP_API_KEY` with your actual TULIP API key, then save the
+Replace `YOUR_SRAM_APPLICATION_TOKEN` with your SRAM application token, then save the
 file. Continue reloads the configuration automatically; if the model selector
 does not update, reload the VS Code window.
 

@@ -5,7 +5,7 @@ Use [OpenHarness](https://github.com/anthropics/openharness) as an AI coding ass
 ## Prerequisites
 
 - OpenHarness installed (`pip install openharness` or `uv tool install openharness`)
-- A valid TULIP API key
+- An SRAM application token to use as your TULIP API key. See [Request Access](../getting-started/access.md).
 - Access to the TU Delft network (or eduVPN)
 
 ## Setup
@@ -31,11 +31,11 @@ Edit the credentials file:
 nano ~/.openharness/credentials.json
 ```
 
-Add your TULIP API key with the `profile:tulip` key:
+Add your SRAM application token as the API key in the `profile:tulip` entry:
 
 ```json
 {
-  "profile:tulip": {"api_key": "your-tulip-api-key"}
+  "profile:tulip": {"api_key": "YOUR_SRAM_APPLICATION_TOKEN"}
 }
 ```
 
@@ -45,7 +45,7 @@ keep them alongside the TULIP entry:
 ```json
 {
   "openai": {"api_key": "sk-your-openai-key"},
-  "profile:tulip": {"api_key": "your-tulip-api-key"}
+  "profile:tulip": {"api_key": "YOUR_SRAM_APPLICATION_TOKEN"}
 }
 ```
 

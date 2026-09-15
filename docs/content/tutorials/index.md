@@ -16,7 +16,6 @@ These tutorials contain runnable Bash and Python examples:
 - [Embeddings](embeddings.md)
 - [Tool Calling](tool_calling.md)
 
-
 ### Before running the examples
 
 1. Clone and enter the repository:
@@ -32,7 +31,7 @@ These tutorials contain runnable Bash and Python examples:
     cp .env.example .env
     ```
 
-3. Set your API key in `.env`.
+3. Set `TUDELFT_TULIP_API_KEY` in `.env` to your SRAM application token. See [Request Access](../getting-started/access.md).
 
 ### Dependency Setup
 
@@ -50,5 +49,3 @@ repository unless stated otherwise.
 - [OpenCode](opencode.md) — terminal-based coding agent
 - [Hermes Agent](hermes.md) — general-purpose agent harness
 - [Jan.ai](jan-ai.md) — desktop chat client
-
-

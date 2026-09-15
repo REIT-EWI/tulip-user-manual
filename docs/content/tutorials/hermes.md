@@ -5,10 +5,12 @@ Use the [Hermes agent harness](https://hermes-agent.nousresearch.com/) by Nous R
 ## Prerequisites
 
 - Hermes installed (desktop app or CLI)
-- A valid TULIP API key or SRAM personal token
+- An SRAM application token to use as your TULIP API key. See [Request Access](../getting-started/access.md).
 - Access to the TU Delft network (or eduVPN)
 
 ## Setup
+
+Replace `YOUR_SRAM_APPLICATION_TOKEN` in the examples below with your SRAM application token.
 
 Hermes reads its configuration from `~/.hermes/config.yaml`. Define TULIP as a named provider so it appears under its own name in the Hermes menus:
 
@@ -20,7 +22,7 @@ providers:
   tulip:
     api: https://api.tulip.tudelft.nl/chat/v1
     name: "TULIP"
-    api_key: YOUR_TULIP_TOKEN
+    api_key: YOUR_SRAM_APPLICATION_TOKEN
     default_model: chat
     models:
       chat:
@@ -43,7 +45,7 @@ To keep another provider as the main model and route only specific tasks to TULI
 auxiliary:
   compression:
     base_url: https://api.tulip.tudelft.nl/chat/v1
-    api_key: YOUR_TULIP_TOKEN
+    api_key: YOUR_SRAM_APPLICATION_TOKEN
     model: chat
 ```
 

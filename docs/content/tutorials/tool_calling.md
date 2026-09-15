@@ -6,10 +6,12 @@ All examples in this page assume environment variables are available. For conven
 
 ```dotenv
 TUDELFT_TULIP_BASE_URL=https://api.tulip.tudelft.nl
-TUDELFT_TULIP_API_KEY=YOUR_API_KEY
+TUDELFT_TULIP_API_KEY=YOUR_SRAM_APPLICATION_TOKEN
 TUDELFT_TULIP_MODEL_ALIAS=code
 TUDELFT_TULIP_CAPABILITY=code
 ```
+
+Replace `YOUR_SRAM_APPLICATION_TOKEN` with your SRAM application token, used as the TULIP API key. See [Request Access](../getting-started/access.md).
 
 Set `TUDELFT_TULIP_BASE_URL` to host root only (for example `https://api.tulip.tudelft.nl`). The Python helper normalizes it to a capability-specific `/v1` endpoint automatically.
 

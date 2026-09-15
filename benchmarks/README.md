@@ -14,7 +14,7 @@ This folder contains the Tulip benchmarking workspace. It is used for heavier pe
 Benchmark scripts source `../../.env` when present. At minimum, set:
 
 - `TUDELFT_TULIP_BASE_URL`
-- `TUDELFT_TULIP_API_KEY`
+- `TUDELFT_TULIP_API_KEY`: your SRAM application token, used as the TULIP API key
 
 From this directory, update `scripts/scenario.conf` for the scenario you want to run, then run the benchmark scripts directly:
 

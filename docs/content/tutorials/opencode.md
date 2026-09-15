@@ -5,7 +5,7 @@ Use [OpenCode](https://opencode.ai) as an AI coding assistant with TULIP.
 ## Prerequisites
 
 - OpenCode installed, for example with `curl -fsSL https://opencode.ai/install | bash`. See the [OpenCode installation documentation](https://opencode.ai/docs/#install) for other installation methods.
-- A valid TULIP API key.
+- An SRAM application token to use as your TULIP API key. See [Request Access](../getting-started/access.md).
 - Access to the TU Delft network, either on campus or through [eduVPN](https://tudelft.eduvpn.nl/portal/home).
 
 ## Setup
@@ -36,19 +36,16 @@ Create or edit `~/.config/opencode/opencode.json`:
 ```
 
 !!! note "Using another TULIP model"
-
     Each TULIP model has a corresponding endpoint and model alias. When changing models, update both `baseURL` and the key under `models`.
-
     See [Model Mapping](../getting-started/model-mapping.md) for the available aliases and their current backing models.
-
     To configure multiple TULIP models simultaneously, define a separate OpenCode provider for each one because `baseURL` is configured at the provider level.
 
 ### 2. Set your API key
 
-Add the environment variable to your shell profile (`~/.bashrc`, `~/.zshrc`, or equivalent):
+Set your SRAM application token as `TUDELFT_TULIP_API_KEY` in your shell profile (`~/.bashrc`, `~/.zshrc`, or equivalent):
 
 ```bash
-export TUDELFT_TULIP_API_KEY="your-tulip-api-key"
+export TUDELFT_TULIP_API_KEY="YOUR_SRAM_APPLICATION_TOKEN"
 ```
 
 Open a new terminal, or reload your current shell configuration:
@@ -80,19 +77,18 @@ opencode --model tudelft-tulip/code
 Use `/models` within OpenCode to view or select configured models.
 
 !!! warning
-
     OpenCode can read and modify files and run commands in its working directory. Start it in the intended project directory and review requested actions before approving them.
 
 ## Troubleshooting
 
 ### Unauthorized
 
-Check whether the API-key environment variable is set:
+Check whether the TULIP API key environment variable is set:
 
 ```bash
 test -n "$TUDELFT_TULIP_API_KEY" \
-  && echo "API key is set" \
-  || echo "API key is not set"
+  && echo "TULIP API key is set" \
+  || echo "TULIP API key is not set"
 ```
 
 Also ensure that the `apiKey` field in `opencode.json` uses the correct syntax:
