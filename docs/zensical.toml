@@ -15,6 +15,7 @@ nav = [
     {"Home" = "index.md"},
     {"Getting Started" = [
         {"Overview" = "getting-started/index.md"},
+        {"Requesting Access" = "getting-started/access.md"},
         {"Your First Request" = "getting-started/first-interaction.md"},
         {"Available Models" = "getting-started/model-mapping.md"},
         {"API Reference" = "getting-started/api_reference.md"},
@@ -22,12 +23,18 @@ nav = [
     ]},
     {"Tutorials" = [
         {"Overview" = "tutorials/index.md"},
-        {"Chat & General Inference" = "tutorials/chat-inference.md"},
-        {"Embeddings" = "tutorials/embeddings.md"},
-        {"Tool Calling" = "tutorials/tool_calling.md"},
-        {"VS Code Integration" = "tutorials/tulip-vscode.md"},
-        {"OpenHarness Integration" = "tutorials/openharness.md"},
-        {"Jan.ai Integration" = "tutorials/jan-ai.md"}
+        {"Direct API" = [
+            {"Chat & General Inference" = "tutorials/chat-inference.md"},
+            {"Embeddings" = "tutorials/embeddings.md"},
+            {"Tool Calling" = "tutorials/tool_calling.md"}
+        ]},
+        {"Integrations" = [
+            {"VS Code (Continue)" = "tutorials/tulip-vscode.md"},
+            {"OpenCode" = "tutorials/opencode.md"},
+            # {"OpenHarness" = "tutorials/openharness.md"},
+            {"Hermes Agent" = "tutorials/hermes.md"},
+            {"Jan.ai" = "tutorials/jan-ai.md"}
+        ]}
     ]},
     {"Data handling" = "data_handling.md"},
     {"Changelog" = "changelog.md"},
