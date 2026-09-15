@@ -8,7 +8,7 @@ fi
 : "${TUDELFT_TULIP_API_KEY:?Set TUDELFT_TULIP_API_KEY in .env or environment}"
 
 for route in chat code embed; do
-  curl -s --fail --show-error "https://api.tulip.tudelft.nl/${route}/v1/models" \
+   curl -s --fail --show-error "https://api.tulip.tudelft.nl/${route}/v1/models" \
     -H "Authorization: Bearer ${TUDELFT_TULIP_API_KEY}" \
-    -H "Content-Type: application/json" | jq -r '.data[].id'
+    -H "Content-Type: application/json" | jq .
 done
