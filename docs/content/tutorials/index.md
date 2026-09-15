@@ -21,8 +21,8 @@ These tutorials contain runnable Bash and Python examples:
 1. Clone and enter the repository:
 
     ```bash
-    git clone https://gitlab.ewi.tudelft.nl/tulip/reference-tests.git
-    cd reference-tests
+    git clone https://gitlab.ewi.tudelft.nl/tulip/user-manual.git
+    cd user-manual
     ```
 
 2. Create your environment file:

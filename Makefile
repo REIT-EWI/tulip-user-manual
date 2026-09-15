@@ -1,4 +1,4 @@
-# Makefile for reference-tests
+# Makefile for user-manual
 #
 # Note:
 # This repository now lives independently.

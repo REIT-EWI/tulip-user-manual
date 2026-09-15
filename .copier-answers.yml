@@ -3,8 +3,8 @@ _commit: v1.1
 _src_path: gh:virtlink/zensical-docs-template
 author: Azza Ahmed
 description: Guides, tutorials, and reference information.
-edit_uri: https://gitlab.ewi.tudelft.nl/tulip/reference-tests/docs
+edit_uri: https://gitlab.ewi.tudelft.nl/tulip/user-manual/-/tree/main/docs?ref_type=heads
 name: TULIP Docs
-repo_url: https://gitlab.ewi.tudelft.nl/tulip/reference-tests
+repo_url: https://gitlab.ewi.tudelft.nl/tulip/user-manual
 site_url: https://docs.tulip.tudelft.nl/
 vcs_platform: Other

@@ -6,8 +6,8 @@ site_author = "Azza Ahmed"
 site_dir = "public/"
 site_url = "https://docs.tulip.tudelft.nl/"
 docs_dir = "content/"
-repo_url = "https://gitlab.ewi.tudelft.nl/tulip/reference-tests"
-edit_uri = "https://gitlab.ewi.tudelft.nl/tulip/reference-tests/-/tree/main/docs/content/"
+repo_url = "https://gitlab.ewi.tudelft.nl/tulip/user-manual"
+edit_uri = "https://gitlab.ewi.tudelft.nl/tulip/user-manual/-/tree/main/docs/content/"
 
 extra_css = ["assets/extra.css"]
 

@@ -16,7 +16,7 @@ Your feedback directly shapes the next iteration of TULIP. Please report:
 
 **How to report:**
 
-- **Technical issues** (unexpected behavior, errors, latency): [open a GitLab issue](https://gitlab.ewi.tudelft.nl/tulip/reference-tests/-/issues)
+- **Technical issues** (unexpected behavior, errors, latency): [open a GitLab issue](https://gitlab.ewi.tudelft.nl/tulip/user-manual/-/issues)
 - **Other feedback or questions:** Email [tulip-reit@tudelft.nl](mailto:tulip-reit@tudelft.nl)
 
 ---
