@@ -10,7 +10,7 @@ curl -s --fail --show-error ${TUDELFT_TULIP_BASE_URL}/${TUDELFT_TULIP_CAPABILITY
   -H "Authorization: Bearer ${TUDELFT_TULIP_API_KEY}" \
   -d '{
     "model": "'"${TUDELFT_TULIP_MODEL_ALIAS}"'",
-    "max_tokens": 256,
+    "max_tokens": 128,
     "temperature": 0.2,
     "messages": [
       { "role": "system", "content": "You are a helpful coding assistant for TU Delft." },
