@@ -1,3 +1,9 @@
+## Unreleased
+
+### Changed
+
+- Legacy `sk-tulip-...` API keys disabled on 2026-09-24; SRAM application tokens are the only accepted credential.
+
 ## v0.4.0-alpha (2026-06-18)
 
 ### Changed

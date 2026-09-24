@@ -5,7 +5,7 @@ Use the [Hermes agent harness](https://hermes-agent.nousresearch.com/) by Nous R
 ## Prerequisites
 
 - Hermes installed (desktop app or CLI)
-- A valid TULIP API key or SRAM personal token
+- A valid SRAM application token (see [Requesting Access](../getting-started/access.md))
 - Access to the TU Delft network (or eduVPN)
 
 ## Setup
