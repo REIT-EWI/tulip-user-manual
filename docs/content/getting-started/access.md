@@ -5,10 +5,9 @@ You only need to complete this setup once: if you already have a collaboration i
 
 ## Step 1: Join the collaboration
 
-1. Go to [sram.surf.nl](https://sram.surf.nl/).
-2. Search for the **TU-Delft-Tulip** collaboration (short name `tudelfttulip`).
-3. Request to join. TU Delft affiliation is required.
-4. Wait for approval from the collaboration administrators.
+1. Follow the link to [**TU-Delft-Tulip** SRAM collaboration](https://sram.surf.nl/registration?collaboration=6378c522-a708-427d-82be-ad43d86765e8).
+2. Request to join. TU Delft affiliation is required.
+3. Wait for approval from the collaboration administrators.
 
 Processing usually takes one to two business days. You receive an email once you are approved.
 
