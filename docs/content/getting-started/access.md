@@ -29,6 +29,6 @@ Your access tier follows your group membership within the collaboration. Adminis
 
 ## Legacy API keys
 
-Keys issued before the SRAM migration (`sk-tulip-...`) were disabled on **September 24, 2026**. Requests with such a key return `401 Unauthorized`. Use an SRAM application token instead, as described above.
+Keys issued before the SRAM migration (`sk-tulip-...`) were disabled on **October 15, 2026**. Requests with such a key return `401 Unauthorized`. Use an SRAM application token instead, as described above.
 
 Once you have a token, continue with [Your First Request](first-interaction.md).

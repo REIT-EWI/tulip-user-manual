@@ -2,7 +2,9 @@
 
 ### Changed
 
-- Legacy `sk-tulip-...` API keys disabled on 2026-09-24; SRAM application tokens are the only accepted credential.
+- Legacy `sk-tulip-...` API keys disabled on 2026-10-15; SRAM application tokens are the only accepted credential.
+- Updated the TULIP serving runtime to Dynamo `1.4.0`.
+- Refreshed the backend model behind the `code` alias: `Qwen/Qwen3.8-27B-FP8`.
 
 ## v0.4.0-alpha (2026-06-18)
 
