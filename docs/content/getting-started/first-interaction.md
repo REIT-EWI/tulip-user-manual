@@ -15,12 +15,11 @@ TULIP exposes a single, unified API at <https://api.tulip.tudelft.nl> with OpenA
 
 ## Authentication
 
-Every request carries a credential in the `Authorization: Bearer` header. TULIP accepts two kinds:
+Every request carries an SRAM application token in the `Authorization: Bearer` header. Join the TU-Delft-Tulip collaboration and create a token on your SRAM profile page, as described in [Requesting Access](access.md). Your access tier follows your group membership in the collaboration. Tokens are self-service: you can create and revoke them without contacting the TULIP team.
 
-- **SRAM application token** (recommended): join the TU-Delft-Tulip collaboration and create a token on your SRAM profile page, as described in [Requesting Access](access.md). Your access tier follows your group membership in the collaboration. Tokens are self-service: you can create and revoke them without contacting the TULIP team.
-- **Legacy API key** (`sk-tulip-...`): keys issued before the SRAM migration keep working until **September 15, 2026**, when they are disabled. All users must switch to SRAM tokens before that date.
+Legacy API keys (`sk-tulip-...`) were disabled on October 15, 2026 and return `401 Unauthorized`.
 
-The examples below work identically with either credential; set it as `TUDELFT_TULIP_API_KEY`.
+Set your token as `TUDELFT_TULIP_API_KEY` for the examples below.
 
 ## Your First Request
 
