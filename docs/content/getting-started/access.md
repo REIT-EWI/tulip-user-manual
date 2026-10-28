@@ -29,4 +29,8 @@ This SRAM application token is the API key you use with TULIP clients and exampl
 
 Your access tier follows your group membership within the collaboration. Administrators manage that membership; there is nothing to configure on your side.
 
-Once you have your API key, continue with [Your First Request](first-interaction.md).
+## Legacy API keys
+
+Keys issued before the SRAM migration (`sk-tulip-...`) were disabled on **October 15, 2026**. Requests with such a key return `401 Unauthorized`. Use an SRAM application token instead, as described above.
+
+Once you have a token, continue with [Your First Request](first-interaction.md).
