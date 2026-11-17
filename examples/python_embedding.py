@@ -18,20 +18,8 @@ print(
 )
 response = client.embeddings.create(
     model=TUDELFT_TULIP_MODEL_ALIAS,
-    input=["Hello from tulip", "this rocks!"],
+    input="Hello from tulip",
     encoding_format="float",
 )
 print(f"Number of embeddings: {len(response.data)}")
 print(f"Embedding dimension: {len(response.data[0].embedding)}")
-
-print(
-    "\n*** Check embeddings works (different strings -> different vectors) ***",
-    file=sys.stderr,
-)
-response = client.embeddings.create(
-    model=TUDELFT_TULIP_MODEL_ALIAS,
-    input=["cat", "quantum entanglement"],
-    encoding_format="float",
-)
-for item in response.data:
-    print(f"Index {item.index}: {item.embedding[0:5]}")

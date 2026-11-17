@@ -6,6 +6,13 @@
 - Updated the TULIP serving runtime to Dynamo `1.4.0`.
 - Refreshed the backend model behind the `code` alias: `Qwen/Qwen3.8-27B-FP8`.
 
+### Known limitations
+
+Observed in the current TULIP deployment on 2026-11-16:
+
+- **Batch embeddings:** Requests containing multiple input strings to `/embed/v1/embeddings` fail with HTTP 500 (`Failed to fold embeddings stream`). Single-input requests succeed; submit strings individually as a workaround. See the [embedding examples](tutorials/embeddings.md).
+- **Batch prompt log probabilities:** Batch completions for `chat` and `code` return multiple choices, but `nvext.prompt_logprobs` contains only one prompt's log probabilities. Submit prompts individually when calculating perplexity. See the [batch prompt-token log probabilities example](tutorials/logprobs.md#batch-prompt-token-log-probabilities).
+
 ## v0.4.0-alpha (2026-06-18)
 
 ### Changed

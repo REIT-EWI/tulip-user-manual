@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# Smoke-test chat/code model listings and completions, plus embeddings.
+# Load configuration from the repository-root .env or environment.
+# Requires: bash, curl, jq, and TUDELFT_TULIP_API_KEY.
+#
+# Usage:
+#   bash tests/smoke.sh
+#   bash tests/smoke.sh --loop 3
+#
+# Write results to tests/logs/. Exit nonzero if any check fails.
+
 # set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"

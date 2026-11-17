@@ -12,7 +12,7 @@ completion = client.chat.completions.create(
     model=model,
     messages=[
         {
-            "role": "developer",
+            "role": "system",
             "content": "You are a helpful coding assistant for TU Delft.",
         },
         {
@@ -22,6 +22,8 @@ completion = client.chat.completions.create(
             ),
         },
     ],
+    max_tokens=300,
+    temperature=0.2,
 )
 
 print(completion.choices[0].message.content)
